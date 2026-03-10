@@ -1,2 +1,3 @@
 new branch
 new line from master branch
+new line from feature branch
