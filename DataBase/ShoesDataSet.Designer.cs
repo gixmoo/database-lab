@@ -10,9 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-using System.Data;
-
 namespace DataBase {
     
     
@@ -4068,8 +4065,6 @@ namespace DataBase {
             
             private global::System.Data.DataColumn columnAdditional;
             
-            private global::System.Data.DataColumn columnPhoto;
-            
             private global::System.Data.DataColumn columnStyleName;
             
             private global::System.Data.DataColumn columnLiningName;
@@ -4243,14 +4238,6 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn PhotoColumn {
-                get {
-                    return this.columnPhoto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public global::System.Data.DataColumn StyleNameColumn {
                 get {
                     return this.columnStyleName;
@@ -4374,7 +4361,6 @@ namespace DataBase {
                         float Prize, 
                         TypeRow parentTypeRowByВид_товаруКаталог_взуття1, 
                         string Additional, 
-                        byte[] Photo, 
                         string StyleName, 
                         string LiningName, 
                         string SoleName, 
@@ -4401,7 +4387,6 @@ namespace DataBase {
                         Prize,
                         null,
                         Additional,
-                        Photo,
                         StyleName,
                         LiningName,
                         SoleName,
@@ -4482,7 +4467,6 @@ namespace DataBase {
                 this.columnPrize = base.Columns["Prize"];
                 this.columnType = base.Columns["Type"];
                 this.columnAdditional = base.Columns["Additional"];
-                this.columnPhoto = base.Columns["Photo"];
                 this.columnStyleName = base.Columns["StyleName"];
                 this.columnLiningName = base.Columns["LiningName"];
                 this.columnSoleName = base.Columns["SoleName"];
@@ -4527,8 +4511,6 @@ namespace DataBase {
                 base.Columns.Add(this.columnType);
                 this.columnAdditional = new global::System.Data.DataColumn("Additional", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdditional);
-                this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoto);
                 this.columnStyleName = new global::System.Data.DataColumn("StyleName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStyleName);
                 this.columnLiningName = new global::System.Data.DataColumn("LiningName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4726,8 +4708,6 @@ namespace DataBase {
             
             private global::System.Data.DataColumn columnAdditional;
             
-            private global::System.Data.DataColumn columnPhoto;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public ShoesFKDataTable() {
@@ -4883,14 +4863,6 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn PhotoColumn {
-                get {
-                    return this.columnPhoto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4926,23 +4898,7 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public ShoesFKRow AddShoesFKRow(
-                        byte Code, 
-                        string Name, 
-                        string StyleName, 
-                        string LiningName, 
-                        string UpperName, 
-                        string SoleName, 
-                        string Color, 
-                        double Size, 
-                        string SeasonName, 
-                        string CountryName, 
-                        string BrandName, 
-                        string AudienceName, 
-                        float Prize, 
-                        string TypeName, 
-                        string Additional, 
-                        string Photo) {
+            public ShoesFKRow AddShoesFKRow(byte Code, string Name, string StyleName, string LiningName, string UpperName, string SoleName, string Color, double Size, string SeasonName, string CountryName, string BrandName, string AudienceName, float Prize, string TypeName, string Additional) {
                 ShoesFKRow rowShoesFKRow = ((ShoesFKRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Code,
@@ -4959,8 +4915,7 @@ namespace DataBase {
                         AudienceName,
                         Prize,
                         TypeName,
-                        Additional,
-                        Photo};
+                        Additional};
                 rowShoesFKRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowShoesFKRow);
                 return rowShoesFKRow;
@@ -4998,7 +4953,6 @@ namespace DataBase {
                 this.columnPrize = base.Columns["Prize"];
                 this.columnTypeName = base.Columns["TypeName"];
                 this.columnAdditional = base.Columns["Additional"];
-                this.columnPhoto = base.Columns["Photo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5034,8 +4988,6 @@ namespace DataBase {
                 base.Columns.Add(this.columnTypeName);
                 this.columnAdditional = new global::System.Data.DataColumn("Additional", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdditional);
-                this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoto);
                 this.columnName.MaxLength = 30;
                 this.columnStyleName.MaxLength = 20;
                 this.columnLiningName.MaxLength = 15;
@@ -5048,7 +5000,6 @@ namespace DataBase {
                 this.columnAudienceName.MaxLength = 10;
                 this.columnTypeName.MaxLength = 30;
                 this.columnAdditional.MaxLength = 536870910;
-                this.columnPhoto.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5688,8 +5639,6 @@ namespace DataBase {
                 xs.Add(dsSchema);
                 return type;
             }
-
-            
         }
         
         /// <summary>
@@ -7104,22 +7053,6 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public byte[] Photo {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableShoes_catalogue1.PhotoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Photo\' in table \'Shoes catalogue1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableShoes_catalogue1.PhotoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string StyleName {
                 get {
                     try {
@@ -7531,18 +7464,6 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsPhotoNull() {
-                return this.IsNull(this.tableShoes_catalogue1.PhotoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetPhotoNull() {
-                this[this.tableShoes_catalogue1.PhotoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsStyleNameNull() {
                 return this.IsNull(this.tableShoes_catalogue1.StyleNameColumn);
             }
@@ -7906,22 +7827,6 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string Photo {
-                get {
-                    try {
-                        return ((string)(this[this.tableShoesFK.PhotoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Photo\' in table \'ShoesFK\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableShoesFK.PhotoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsCodeNull() {
                 return this.IsNull(this.tableShoesFK.CodeColumn);
             }
@@ -8098,18 +8003,6 @@ namespace DataBase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetAdditionalNull() {
                 this[this.tableShoesFK.AdditionalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsPhotoNull() {
-                return this.IsNull(this.tableShoesFK.PhotoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetPhotoNull() {
-                this[this.tableShoesFK.PhotoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12839,7 +12732,6 @@ namespace DataBase.ShoesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Prize", "Prize");
             tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("Additional", "Additional");
-            tableMapping.ColumnMappings.Add("Photo", "Photo");
             tableMapping.ColumnMappings.Add("StyleName", "StyleName");
             tableMapping.ColumnMappings.Add("LiningName", "LiningName");
             tableMapping.ColumnMappings.Add("SoleName", "SoleName");
@@ -12972,20 +12864,19 @@ namespace DataBase.ShoesDataSetTableAdapters {
                 "     [Shoes catalogue].Country, Country.Name AS CountryName, [Shoes catalogue].B" +
                 "rand, Brand.Name AS BrandName, [Shoes catalogue].[Target audience], [Target audi" +
                 "ence].Name AS AudienceName, [Shoes catalogue].Prize, \r\n                         " +
-                "[Shoes catalogue].Type, Type.Name AS TypeName, [Shoes catalogue].Additional, [Sh" +
-                "oes catalogue].Photo\r\nFROM            ((((((((([Shoes catalogue] INNER JOIN\r\n   " +
-                "                      Brand ON [Shoes catalogue].Brand = Brand.Code) INNER JOIN\r" +
-                "\n                         Country ON [Shoes catalogue].Country = Country.Code) I" +
-                "NNER JOIN\r\n                         [Lining material] ON [Shoes catalogue].[Lini" +
-                "ng material] = [Lining material].Code) INNER JOIN\r\n                         Seas" +
-                "on ON [Shoes catalogue].Season = Season.Code) INNER JOIN\r\n                      " +
-                "   [Sole material] ON [Shoes catalogue].[Sole material] = [Sole material].Code) " +
-                "INNER JOIN\r\n                         Style ON [Shoes catalogue].Style = Style.Co" +
-                "de) INNER JOIN\r\n                         [Target audience] ON [Shoes catalogue]." +
-                "[Target audience] = [Target audience].Code) INNER JOIN\r\n                        " +
-                " Type ON [Shoes catalogue].Type = Type.Code) INNER JOIN\r\n                       " +
-                "  [Upper material] ON [Shoes catalogue].[Upper material] = [Upper material].Code" +
-                ")";
+                "[Shoes catalogue].Type, Type.Name AS TypeName, [Shoes catalogue].Additional\r\nFRO" +
+                "M            ((((((((([Shoes catalogue] INNER JOIN\r\n                         Bra" +
+                "nd ON [Shoes catalogue].Brand = Brand.Code) INNER JOIN\r\n                        " +
+                " Country ON [Shoes catalogue].Country = Country.Code) INNER JOIN\r\n              " +
+                "           [Lining material] ON [Shoes catalogue].[Lining material] = [Lining ma" +
+                "terial].Code) INNER JOIN\r\n                         Season ON [Shoes catalogue].S" +
+                "eason = Season.Code) INNER JOIN\r\n                         [Sole material] ON [Sh" +
+                "oes catalogue].[Sole material] = [Sole material].Code) INNER JOIN\r\n             " +
+                "            Style ON [Shoes catalogue].Style = Style.Code) INNER JOIN\r\n         " +
+                "                [Target audience] ON [Shoes catalogue].[Target audience] = [Targ" +
+                "et audience].Code) INNER JOIN\r\n                         Type ON [Shoes catalogue" +
+                "].Type = Type.Code) INNER JOIN\r\n                         [Upper material] ON [Sh" +
+                "oes catalogue].[Upper material] = [Upper material].Code)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13515,7 +13406,6 @@ namespace DataBase.ShoesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Prize", "Prize");
             tableMapping.ColumnMappings.Add("TypeName", "TypeName");
             tableMapping.ColumnMappings.Add("Additional", "Additional");
-            tableMapping.ColumnMappings.Add("Photo", "Photo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13532,9 +13422,9 @@ namespace DataBase.ShoesDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Code, Name, StyleName, LiningName, UpperName, SoleName, Color, [Size], Sea" +
-                "sonName, CountryName, BrandName, AudienceName, Prize, TypeName, Additional, Phot" +
-                "o FROM ShoesFK";
+            this._commandCollection[0].CommandText = "SELECT        Code, Name, StyleName, LiningName, UpperName, SoleName, Color, [Siz" +
+                "e], SeasonName, CountryName, BrandName, AudienceName, Prize, TypeName, Additiona" +
+                "l\r\nFROM            ShoesFK";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

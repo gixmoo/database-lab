@@ -609,7 +609,7 @@ FROM            (Brand INNER JOIN
                     <CommandText>SELECT        [Shoes catalogue].Code, [Shoes catalogue].Name, [Shoes catalogue].Style, Style.Name AS StyleName, [Shoes catalogue].[Lining material], [Lining material].Name AS LiningName, [Shoes catalogue].[Upper material], 
                          [Upper material].Name AS UpperName, [Shoes catalogue].[Sole material], [Sole material].Name AS SoleName, [Shoes catalogue].Color, [Shoes catalogue].[Size], [Shoes catalogue].Season, Season.Name AS SeasonName, 
                          [Shoes catalogue].Country, Country.Name AS CountryName, [Shoes catalogue].Brand, Brand.Name AS BrandName, [Shoes catalogue].[Target audience], [Target audience].Name AS AudienceName, [Shoes catalogue].Prize, 
-                         [Shoes catalogue].Type, Type.Name AS TypeName, [Shoes catalogue].Additional, [Shoes catalogue].Photo
+                         [Shoes catalogue].Type, Type.Name AS TypeName, [Shoes catalogue].Additional
 FROM            ((((((((([Shoes catalogue] INNER JOIN
                          Brand ON [Shoes catalogue].Brand = Brand.Code) INNER JOIN
                          Country ON [Shoes catalogue].Country = Country.Code) INNER JOIN
@@ -691,7 +691,6 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
               <Mapping SourceColumn="Prize" DataSetColumn="Prize" />
               <Mapping SourceColumn="Type" DataSetColumn="Type" />
               <Mapping SourceColumn="Additional" DataSetColumn="Additional" />
-              <Mapping SourceColumn="Photo" DataSetColumn="Photo" />
               <Mapping SourceColumn="StyleName" DataSetColumn="StyleName" />
               <Mapping SourceColumn="LiningName" DataSetColumn="LiningName" />
               <Mapping SourceColumn="SoleName" DataSetColumn="SoleName" />
@@ -709,7 +708,8 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
               <DbSource ConnectionRef="ShoesConnectionString (Settings)" DbObjectName="ShoesFK" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Code, Name, StyleName, LiningName, UpperName, SoleName, Color, [Size], SeasonName, CountryName, BrandName, AudienceName, Prize, TypeName, Additional, Photo FROM ShoesFK</CommandText>
+                    <CommandText>SELECT        Code, Name, StyleName, LiningName, UpperName, SoleName, Color, [Size], SeasonName, CountryName, BrandName, AudienceName, Prize, TypeName, Additional
+FROM            ShoesFK</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -731,7 +731,6 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
               <Mapping SourceColumn="Prize" DataSetColumn="Prize" />
               <Mapping SourceColumn="TypeName" DataSetColumn="TypeName" />
               <Mapping SourceColumn="Additional" DataSetColumn="Additional" />
-              <Mapping SourceColumn="Photo" DataSetColumn="Photo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1107,7 +1106,7 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
         <xs:element name="Shoes_x0020_catalogue1" msprop:Generator_RowEvHandlerName="Shoes_catalogue1RowChangeEventHandler" msprop:Generator_RowDeletedName="Shoes_catalogue1RowDeleted" msprop:Generator_RowDeletingName="Shoes_catalogue1RowDeleting" msprop:Generator_RowEvArgName="Shoes_catalogue1RowChangeEvent" msprop:Generator_TablePropName="Shoes_catalogue1" msprop:Generator_RowChangedName="Shoes_catalogue1RowChanged" msprop:Generator_UserTableName="Shoes catalogue1" msprop:Generator_RowChangingName="Shoes_catalogue1RowChanging" msprop:Generator_RowClassName="Shoes_catalogue1Row" msprop:Generator_TableClassName="Shoes_catalogue1DataTable" msprop:Generator_TableVarName="tableShoes_catalogue1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnVarNameInTable="columnCode" type="xs:unsignedByte" />
+              <xs:element name="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnVarNameInTable="columnCode" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1140,7 +1139,6 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_UserColumnName="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="StyleName" msprop:Generator_ColumnPropNameInTable="StyleNameColumn" msprop:Generator_ColumnPropNameInRow="StyleName" msprop:Generator_UserColumnName="StyleName" msprop:Generator_ColumnVarNameInTable="columnStyleName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1207,143 +1205,136 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ShoesFK" msprop:Generator_RowEvHandlerName="ShoesFKRowChangeEventHandler" msprop:Generator_RowDeletedName="ShoesFKRowDeleted" msprop:Generator_RowDeletingName="ShoesFKRowDeleting" msprop:Generator_RowEvArgName="ShoesFKRowChangeEvent" msprop:Generator_TablePropName="ShoesFK" msprop:Generator_RowChangedName="ShoesFKRowChanged" msprop:Generator_RowChangingName="ShoesFKRowChanging" msprop:Generator_TableClassName="ShoesFKDataTable" msprop:Generator_RowClassName="ShoesFKRow" msprop:Generator_TableVarName="tableShoesFK" msprop:Generator_UserTableName="ShoesFK">
+        <xs:element name="ShoesFK" msprop:Generator_RowClassName="ShoesFKRow" msprop:Generator_RowEvHandlerName="ShoesFKRowChangeEventHandler" msprop:Generator_RowDeletedName="ShoesFKRowDeleted" msprop:Generator_RowDeletingName="ShoesFKRowDeleting" msprop:Generator_RowEvArgName="ShoesFKRowChangeEvent" msprop:Generator_TablePropName="ShoesFK" msprop:Generator_RowChangedName="ShoesFKRowChanged" msprop:Generator_UserTableName="ShoesFK" msprop:Generator_RowChangingName="ShoesFKRowChanging" msprop:Generator_TableClassName="ShoesFKDataTable" msprop:Generator_TableVarName="tableShoesFK">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Code" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_UserColumnName="Code" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+              <xs:element name="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnVarNameInTable="columnCode" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="StyleName" msprop:Generator_ColumnPropNameInRow="StyleName" msprop:Generator_ColumnPropNameInTable="StyleNameColumn" msprop:Generator_ColumnVarNameInTable="columnStyleName" msprop:Generator_UserColumnName="StyleName" minOccurs="0">
+              <xs:element name="StyleName" msprop:Generator_UserColumnName="StyleName" msprop:Generator_ColumnPropNameInTable="StyleNameColumn" msprop:Generator_ColumnPropNameInRow="StyleName" msprop:Generator_ColumnVarNameInTable="columnStyleName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LiningName" msprop:Generator_ColumnPropNameInRow="LiningName" msprop:Generator_ColumnPropNameInTable="LiningNameColumn" msprop:Generator_ColumnVarNameInTable="columnLiningName" msprop:Generator_UserColumnName="LiningName" minOccurs="0">
+              <xs:element name="LiningName" msprop:Generator_UserColumnName="LiningName" msprop:Generator_ColumnPropNameInTable="LiningNameColumn" msprop:Generator_ColumnPropNameInRow="LiningName" msprop:Generator_ColumnVarNameInTable="columnLiningName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UpperName" msprop:Generator_ColumnPropNameInRow="UpperName" msprop:Generator_ColumnPropNameInTable="UpperNameColumn" msprop:Generator_ColumnVarNameInTable="columnUpperName" msprop:Generator_UserColumnName="UpperName" minOccurs="0">
+              <xs:element name="UpperName" msprop:Generator_UserColumnName="UpperName" msprop:Generator_ColumnPropNameInTable="UpperNameColumn" msprop:Generator_ColumnPropNameInRow="UpperName" msprop:Generator_ColumnVarNameInTable="columnUpperName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="25" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SoleName" msprop:Generator_ColumnPropNameInRow="SoleName" msprop:Generator_ColumnPropNameInTable="SoleNameColumn" msprop:Generator_ColumnVarNameInTable="columnSoleName" msprop:Generator_UserColumnName="SoleName" minOccurs="0">
+              <xs:element name="SoleName" msprop:Generator_UserColumnName="SoleName" msprop:Generator_ColumnPropNameInTable="SoleNameColumn" msprop:Generator_ColumnPropNameInRow="SoleName" msprop:Generator_ColumnVarNameInTable="columnSoleName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Color" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_UserColumnName="Color" minOccurs="0">
+              <xs:element name="Color" msprop:Generator_UserColumnName="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnVarNameInTable="columnColor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Size" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_UserColumnName="Size" type="xs:double" minOccurs="0" />
-              <xs:element name="SeasonName" msprop:Generator_ColumnPropNameInRow="SeasonName" msprop:Generator_ColumnPropNameInTable="SeasonNameColumn" msprop:Generator_ColumnVarNameInTable="columnSeasonName" msprop:Generator_UserColumnName="SeasonName" minOccurs="0">
+              <xs:element name="Size" msprop:Generator_UserColumnName="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnVarNameInTable="columnSize" type="xs:double" minOccurs="0" />
+              <xs:element name="SeasonName" msprop:Generator_UserColumnName="SeasonName" msprop:Generator_ColumnPropNameInTable="SeasonNameColumn" msprop:Generator_ColumnPropNameInRow="SeasonName" msprop:Generator_ColumnVarNameInTable="columnSeasonName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CountryName" msprop:Generator_ColumnPropNameInRow="CountryName" msprop:Generator_ColumnPropNameInTable="CountryNameColumn" msprop:Generator_ColumnVarNameInTable="columnCountryName" msprop:Generator_UserColumnName="CountryName" minOccurs="0">
+              <xs:element name="CountryName" msprop:Generator_UserColumnName="CountryName" msprop:Generator_ColumnPropNameInTable="CountryNameColumn" msprop:Generator_ColumnPropNameInRow="CountryName" msprop:Generator_ColumnVarNameInTable="columnCountryName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="40" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="BrandName" msprop:Generator_ColumnPropNameInRow="BrandName" msprop:Generator_ColumnPropNameInTable="BrandNameColumn" msprop:Generator_ColumnVarNameInTable="columnBrandName" msprop:Generator_UserColumnName="BrandName" minOccurs="0">
+              <xs:element name="BrandName" msprop:Generator_UserColumnName="BrandName" msprop:Generator_ColumnPropNameInTable="BrandNameColumn" msprop:Generator_ColumnPropNameInRow="BrandName" msprop:Generator_ColumnVarNameInTable="columnBrandName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AudienceName" msprop:Generator_ColumnPropNameInRow="AudienceName" msprop:Generator_ColumnPropNameInTable="AudienceNameColumn" msprop:Generator_ColumnVarNameInTable="columnAudienceName" msprop:Generator_UserColumnName="AudienceName" minOccurs="0">
+              <xs:element name="AudienceName" msprop:Generator_UserColumnName="AudienceName" msprop:Generator_ColumnPropNameInTable="AudienceNameColumn" msprop:Generator_ColumnPropNameInRow="AudienceName" msprop:Generator_ColumnVarNameInTable="columnAudienceName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Prize" msprop:Generator_ColumnPropNameInRow="Prize" msprop:Generator_ColumnPropNameInTable="PrizeColumn" msprop:Generator_ColumnVarNameInTable="columnPrize" msprop:Generator_UserColumnName="Prize" type="xs:float" minOccurs="0" />
-              <xs:element name="TypeName" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnVarNameInTable="columnTypeName" msprop:Generator_UserColumnName="TypeName" minOccurs="0">
+              <xs:element name="Prize" msprop:Generator_UserColumnName="Prize" msprop:Generator_ColumnPropNameInTable="PrizeColumn" msprop:Generator_ColumnPropNameInRow="Prize" msprop:Generator_ColumnVarNameInTable="columnPrize" type="xs:float" minOccurs="0" />
+              <xs:element name="TypeName" msprop:Generator_UserColumnName="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Additional" msprop:Generator_ColumnPropNameInRow="Additional" msprop:Generator_ColumnPropNameInTable="AdditionalColumn" msprop:Generator_ColumnVarNameInTable="columnAdditional" msprop:Generator_UserColumnName="Additional" minOccurs="0">
+              <xs:element name="Additional" msprop:Generator_UserColumnName="Additional" msprop:Generator_ColumnPropNameInTable="AdditionalColumn" msprop:Generator_ColumnPropNameInRow="Additional" msprop:Generator_ColumnVarNameInTable="columnAdditional" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Photo" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_UserColumnName="Photo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Shoes_x0020_catalogue" msprop:Generator_RowEvHandlerName="Shoes_catalogueRowChangeEventHandler" msprop:Generator_RowDeletedName="Shoes_catalogueRowDeleted" msprop:Generator_RowDeletingName="Shoes_catalogueRowDeleting" msprop:Generator_RowEvArgName="Shoes_catalogueRowChangeEvent" msprop:Generator_TablePropName="Shoes_catalogue" msprop:Generator_RowChangedName="Shoes_catalogueRowChanged" msprop:Generator_RowChangingName="Shoes_catalogueRowChanging" msprop:Generator_TableClassName="Shoes_catalogueDataTable" msprop:Generator_RowClassName="Shoes_catalogueRow" msprop:Generator_TableVarName="tableShoes_catalogue" msprop:Generator_UserTableName="Shoes catalogue">
+        <xs:element name="Shoes_x0020_catalogue" msprop:Generator_RowClassName="Shoes_catalogueRow" msprop:Generator_RowEvHandlerName="Shoes_catalogueRowChangeEventHandler" msprop:Generator_RowDeletedName="Shoes_catalogueRowDeleted" msprop:Generator_RowDeletingName="Shoes_catalogueRowDeleting" msprop:Generator_RowEvArgName="Shoes_catalogueRowChangeEvent" msprop:Generator_TablePropName="Shoes_catalogue" msprop:Generator_RowChangedName="Shoes_catalogueRowChanged" msprop:Generator_UserTableName="Shoes catalogue" msprop:Generator_RowChangingName="Shoes_catalogueRowChanging" msprop:Generator_TableClassName="Shoes_catalogueDataTable" msprop:Generator_TableVarName="tableShoes_catalogue">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Code" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_UserColumnName="Code" type="xs:unsignedByte" />
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+              <xs:element name="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnVarNameInTable="columnCode" type="xs:unsignedByte" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Style" msprop:Generator_ColumnPropNameInRow="Style" msprop:Generator_ColumnPropNameInTable="StyleColumn" msprop:Generator_ColumnVarNameInTable="columnStyle" msprop:Generator_UserColumnName="Style" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Lining_x0020_material" msprop:Generator_ColumnPropNameInRow="Lining_material" msprop:Generator_ColumnPropNameInTable="Lining_materialColumn" msprop:Generator_ColumnVarNameInTable="columnLining_material" msprop:Generator_UserColumnName="Lining material" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Upper_x0020_material" msprop:Generator_ColumnPropNameInRow="Upper_material" msprop:Generator_ColumnPropNameInTable="Upper_materialColumn" msprop:Generator_ColumnVarNameInTable="columnUpper_material" msprop:Generator_UserColumnName="Upper material" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Sole_x0020_material" msprop:Generator_ColumnPropNameInRow="Sole_material" msprop:Generator_ColumnPropNameInTable="Sole_materialColumn" msprop:Generator_ColumnVarNameInTable="columnSole_material" msprop:Generator_UserColumnName="Sole material" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Color" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_UserColumnName="Color" minOccurs="0">
+              <xs:element name="Style" msprop:Generator_UserColumnName="Style" msprop:Generator_ColumnPropNameInTable="StyleColumn" msprop:Generator_ColumnPropNameInRow="Style" msprop:Generator_ColumnVarNameInTable="columnStyle" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Lining_x0020_material" msprop:Generator_UserColumnName="Lining material" msprop:Generator_ColumnPropNameInTable="Lining_materialColumn" msprop:Generator_ColumnPropNameInRow="Lining_material" msprop:Generator_ColumnVarNameInTable="columnLining_material" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Upper_x0020_material" msprop:Generator_UserColumnName="Upper material" msprop:Generator_ColumnPropNameInTable="Upper_materialColumn" msprop:Generator_ColumnPropNameInRow="Upper_material" msprop:Generator_ColumnVarNameInTable="columnUpper_material" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Sole_x0020_material" msprop:Generator_UserColumnName="Sole material" msprop:Generator_ColumnPropNameInTable="Sole_materialColumn" msprop:Generator_ColumnPropNameInRow="Sole_material" msprop:Generator_ColumnVarNameInTable="columnSole_material" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Color" msprop:Generator_UserColumnName="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnVarNameInTable="columnColor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Size" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_UserColumnName="Size" type="xs:double" minOccurs="0" />
-              <xs:element name="Season" msprop:Generator_ColumnPropNameInRow="Season" msprop:Generator_ColumnPropNameInTable="SeasonColumn" msprop:Generator_ColumnVarNameInTable="columnSeason" msprop:Generator_UserColumnName="Season" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Country" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_UserColumnName="Country" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Brand" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnVarNameInTable="columnBrand" msprop:Generator_UserColumnName="Brand" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Target_x0020_audience" msprop:Generator_ColumnPropNameInRow="Target_audience" msprop:Generator_ColumnPropNameInTable="Target_audienceColumn" msprop:Generator_ColumnVarNameInTable="columnTarget_audience" msprop:Generator_UserColumnName="Target audience" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Prize" msprop:Generator_ColumnPropNameInRow="Prize" msprop:Generator_ColumnPropNameInTable="PrizeColumn" msprop:Generator_ColumnVarNameInTable="columnPrize" msprop:Generator_UserColumnName="Prize" type="xs:float" minOccurs="0" />
-              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="Additional" msprop:Generator_ColumnPropNameInRow="Additional" msprop:Generator_ColumnPropNameInTable="AdditionalColumn" msprop:Generator_ColumnVarNameInTable="columnAdditional" msprop:Generator_UserColumnName="Additional" minOccurs="0">
+              <xs:element name="Size" msprop:Generator_UserColumnName="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnVarNameInTable="columnSize" type="xs:double" minOccurs="0" />
+              <xs:element name="Season" msprop:Generator_UserColumnName="Season" msprop:Generator_ColumnPropNameInTable="SeasonColumn" msprop:Generator_ColumnPropNameInRow="Season" msprop:Generator_ColumnVarNameInTable="columnSeason" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Country" msprop:Generator_UserColumnName="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Brand" msprop:Generator_UserColumnName="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_ColumnVarNameInTable="columnBrand" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Target_x0020_audience" msprop:Generator_UserColumnName="Target audience" msprop:Generator_ColumnPropNameInTable="Target_audienceColumn" msprop:Generator_ColumnPropNameInRow="Target_audience" msprop:Generator_ColumnVarNameInTable="columnTarget_audience" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Prize" msprop:Generator_UserColumnName="Prize" msprop:Generator_ColumnPropNameInTable="PrizeColumn" msprop:Generator_ColumnPropNameInRow="Prize" msprop:Generator_ColumnVarNameInTable="columnPrize" type="xs:float" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Additional" msprop:Generator_UserColumnName="Additional" msprop:Generator_ColumnPropNameInTable="AdditionalColumn" msprop:Generator_ColumnPropNameInRow="Additional" msprop:Generator_ColumnVarNameInTable="columnAdditional" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="536870910" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Photo" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_UserColumnName="Photo" minOccurs="0">
+              <xs:element name="Photo" msprop:Generator_UserColumnName="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -1406,26 +1397,26 @@ FROM            ((((((((([Shoes catalogue] INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="КраїнаБренд" msdata:parent="Country" msdata:child="Brand" msdata:parentkey="Code" msdata:childkey="Brand_x0020_country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Brand" msprop:Generator_RelationVarName="relationКраїнаБренд" msprop:Generator_ChildPropName="GetBrandRows" msprop:Generator_UserRelationName="КраїнаБренд" msprop:Generator_ParentPropName="CountryRow" />
-      <msdata:Relationship name="КраїнаБренд1" msdata:parent="Country" msdata:child="Brand1" msdata:parentkey="Code" msdata:childkey="Brand_x0020_country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Brand1" msprop:Generator_RelationVarName="relationКраїнаБренд1" msprop:Generator_ChildPropName="GetBrand1Rows" msprop:Generator_ParentPropName="CountryRow" msprop:Generator_UserRelationName="КраїнаБренд1" />
-      <msdata:Relationship name="БрендКаталог_x0020_взуття2" msdata:parent="Brand" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Brand" msprop:Generator_UserParentTable="Brand" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationБрендКаталог_взуття2" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="BrandRow" msprop:Generator_UserRelationName="БрендКаталог взуття2" />
-      <msdata:Relationship name="Вид_x0020_товаруКаталог_x0020_взуття1" msdata:parent="Type" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Type" msprop:Generator_UserParentTable="Type" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationВид_товаруКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="TypeRow" msprop:Generator_UserRelationName="Вид товаруКаталог взуття1" />
-      <msdata:Relationship name="КраїнаКаталог_x0020_взуття1" msdata:parent="Country" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationКраїнаКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="CountryRow" msprop:Generator_UserRelationName="КраїнаКаталог взуття1" />
-      <msdata:Relationship name="Матеріал_x0020_верхуКаталог_x0020_взуття1" msdata:parent="Upper_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Upper_x0020_material" msprop:Generator_UserParentTable="Upper material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_верхуКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="Upper_materialRow" msprop:Generator_UserRelationName="Матеріал верхуКаталог взуття1" />
-      <msdata:Relationship name="Матеріал_x0020_підкладкиКаталог_x0020_взуття1" msdata:parent="Lining_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Lining_x0020_material" msprop:Generator_UserParentTable="Lining material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_підкладкиКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="Lining_materialRow" msprop:Generator_UserRelationName="Матеріал підкладкиКаталог взуття1" />
-      <msdata:Relationship name="Матеріал_x0020_підошвиКаталог_x0020_взуття1" msdata:parent="Sole_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Sole_x0020_material" msprop:Generator_UserParentTable="Sole material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_підошвиКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="Sole_materialRow" msprop:Generator_UserRelationName="Матеріал підошвиКаталог взуття1" />
-      <msdata:Relationship name="СезонКаталог_x0020_взуття1" msdata:parent="Season" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Season" msprop:Generator_UserParentTable="Season" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationСезонКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="SeasonRow" msprop:Generator_UserRelationName="СезонКаталог взуття1" />
-      <msdata:Relationship name="СтильКаталог_x0020_взуття1" msdata:parent="Style" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Style" msprop:Generator_UserParentTable="Style" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationСтильКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="StyleRow" msprop:Generator_UserRelationName="СтильКаталог взуття1" />
-      <msdata:Relationship name="Цільова_x0020_аудиторіяКаталог_x0020_взуття1" msdata:parent="Target_x0020_audience" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Target_x0020_audience" msprop:Generator_UserParentTable="Target audience" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationЦільова_аудиторіяКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_ParentPropName="Target_audienceRow" msprop:Generator_UserRelationName="Цільова аудиторіяКаталог взуття1" />
-      <msdata:Relationship name="БрендКаталог_x0020_взуття" msdata:parent="Brand" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Brand" msprop:Generator_UserParentTable="Brand" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationБрендКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="BrandRow" msprop:Generator_UserRelationName="БрендКаталог взуття" />
-      <msdata:Relationship name="Вид_x0020_товаруКаталог_x0020_взуття" msdata:parent="Type" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Type" msprop:Generator_UserParentTable="Type" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationВид_товаруКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="TypeRow" msprop:Generator_UserRelationName="Вид товаруКаталог взуття" />
-      <msdata:Relationship name="КраїнаКаталог_x0020_взуття" msdata:parent="Country" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationКраїнаКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="CountryRow" msprop:Generator_UserRelationName="КраїнаКаталог взуття" />
-      <msdata:Relationship name="Матеріал_x0020_верхуКаталог_x0020_взуття" msdata:parent="Upper_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Upper_x0020_material" msprop:Generator_UserParentTable="Upper material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_верхуКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="Upper_materialRow" msprop:Generator_UserRelationName="Матеріал верхуКаталог взуття" />
-      <msdata:Relationship name="Матеріал_x0020_підкладкиКаталог_x0020_взуття" msdata:parent="Lining_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Lining_x0020_material" msprop:Generator_UserParentTable="Lining material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_підкладкиКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="Lining_materialRow" msprop:Generator_UserRelationName="Матеріал підкладкиКаталог взуття" />
-      <msdata:Relationship name="Матеріал_x0020_підошвиКаталог_x0020_взуття" msdata:parent="Sole_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Sole_x0020_material" msprop:Generator_UserParentTable="Sole material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_підошвиКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="Sole_materialRow" msprop:Generator_UserRelationName="Матеріал підошвиКаталог взуття" />
-      <msdata:Relationship name="СезонКаталог_x0020_взуття" msdata:parent="Season" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Season" msprop:Generator_UserParentTable="Season" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationСезонКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="SeasonRow" msprop:Generator_UserRelationName="СезонКаталог взуття" />
-      <msdata:Relationship name="СтильКаталог_x0020_взуття" msdata:parent="Style" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Style" msprop:Generator_UserParentTable="Style" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationСтильКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="StyleRow" msprop:Generator_UserRelationName="СтильКаталог взуття" />
-      <msdata:Relationship name="Цільова_x0020_аудиторіяКаталог_x0020_взуття" msdata:parent="Target_x0020_audience" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Target_x0020_audience" msprop:Generator_UserParentTable="Target audience" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationЦільова_аудиторіяКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_ParentPropName="Target_audienceRow" msprop:Generator_UserRelationName="Цільова аудиторіяКаталог взуття" />
+      <msdata:Relationship name="КраїнаБренд" msdata:parent="Country" msdata:child="Brand" msdata:parentkey="Code" msdata:childkey="Brand_x0020_country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Brand" msprop:Generator_RelationVarName="relationКраїнаБренд" msprop:Generator_ChildPropName="GetBrandRows" msprop:Generator_ParentPropName="CountryRow" msprop:Generator_UserRelationName="КраїнаБренд" />
+      <msdata:Relationship name="КраїнаБренд1" msdata:parent="Country" msdata:child="Brand1" msdata:parentkey="Code" msdata:childkey="Brand_x0020_country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Brand1" msprop:Generator_RelationVarName="relationКраїнаБренд1" msprop:Generator_ChildPropName="GetBrand1Rows" msprop:Generator_UserRelationName="КраїнаБренд1" msprop:Generator_ParentPropName="CountryRow" />
+      <msdata:Relationship name="БрендКаталог_x0020_взуття2" msdata:parent="Brand" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Brand" msprop:Generator_UserParentTable="Brand" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationБрендКаталог_взуття2" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="БрендКаталог взуття2" msprop:Generator_ParentPropName="BrandRow" />
+      <msdata:Relationship name="Вид_x0020_товаруКаталог_x0020_взуття1" msdata:parent="Type" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Type" msprop:Generator_UserParentTable="Type" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationВид_товаруКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="Вид товаруКаталог взуття1" msprop:Generator_ParentPropName="TypeRow" />
+      <msdata:Relationship name="КраїнаКаталог_x0020_взуття1" msdata:parent="Country" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationКраїнаКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="КраїнаКаталог взуття1" msprop:Generator_ParentPropName="CountryRow" />
+      <msdata:Relationship name="Матеріал_x0020_верхуКаталог_x0020_взуття1" msdata:parent="Upper_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Upper_x0020_material" msprop:Generator_UserParentTable="Upper material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_верхуКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="Матеріал верхуКаталог взуття1" msprop:Generator_ParentPropName="Upper_materialRow" />
+      <msdata:Relationship name="Матеріал_x0020_підкладкиКаталог_x0020_взуття1" msdata:parent="Lining_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Lining_x0020_material" msprop:Generator_UserParentTable="Lining material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_підкладкиКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="Матеріал підкладкиКаталог взуття1" msprop:Generator_ParentPropName="Lining_materialRow" />
+      <msdata:Relationship name="Матеріал_x0020_підошвиКаталог_x0020_взуття1" msdata:parent="Sole_x0020_material" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Sole_x0020_material" msprop:Generator_UserParentTable="Sole material" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationМатеріал_підошвиКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="Матеріал підошвиКаталог взуття1" msprop:Generator_ParentPropName="Sole_materialRow" />
+      <msdata:Relationship name="СезонКаталог_x0020_взуття1" msdata:parent="Season" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Season" msprop:Generator_UserParentTable="Season" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationСезонКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="СезонКаталог взуття1" msprop:Generator_ParentPropName="SeasonRow" />
+      <msdata:Relationship name="СтильКаталог_x0020_взуття1" msdata:parent="Style" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Style" msprop:Generator_UserParentTable="Style" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationСтильКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="СтильКаталог взуття1" msprop:Generator_ParentPropName="StyleRow" />
+      <msdata:Relationship name="Цільова_x0020_аудиторіяКаталог_x0020_взуття1" msdata:parent="Target_x0020_audience" msdata:child="Shoes_x0020_catalogue1" msdata:parentkey="Code" msdata:childkey="Target_x0020_audience" msprop:Generator_UserParentTable="Target audience" msprop:Generator_UserChildTable="Shoes catalogue1" msprop:Generator_RelationVarName="relationЦільова_аудиторіяКаталог_взуття1" msprop:Generator_ChildPropName="GetShoes_catalogue1Rows" msprop:Generator_UserRelationName="Цільова аудиторіяКаталог взуття1" msprop:Generator_ParentPropName="Target_audienceRow" />
+      <msdata:Relationship name="БрендКаталог_x0020_взуття" msdata:parent="Brand" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Brand" msprop:Generator_UserParentTable="Brand" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationБрендКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="БрендКаталог взуття" msprop:Generator_ParentPropName="BrandRow" />
+      <msdata:Relationship name="Вид_x0020_товаруКаталог_x0020_взуття" msdata:parent="Type" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Type" msprop:Generator_UserParentTable="Type" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationВид_товаруКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="Вид товаруКаталог взуття" msprop:Generator_ParentPropName="TypeRow" />
+      <msdata:Relationship name="КраїнаКаталог_x0020_взуття" msdata:parent="Country" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Country" msprop:Generator_UserParentTable="Country" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationКраїнаКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="КраїнаКаталог взуття" msprop:Generator_ParentPropName="CountryRow" />
+      <msdata:Relationship name="Матеріал_x0020_верхуКаталог_x0020_взуття" msdata:parent="Upper_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Upper_x0020_material" msprop:Generator_UserParentTable="Upper material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_верхуКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="Матеріал верхуКаталог взуття" msprop:Generator_ParentPropName="Upper_materialRow" />
+      <msdata:Relationship name="Матеріал_x0020_підкладкиКаталог_x0020_взуття" msdata:parent="Lining_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Lining_x0020_material" msprop:Generator_UserParentTable="Lining material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_підкладкиКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="Матеріал підкладкиКаталог взуття" msprop:Generator_ParentPropName="Lining_materialRow" />
+      <msdata:Relationship name="Матеріал_x0020_підошвиКаталог_x0020_взуття" msdata:parent="Sole_x0020_material" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Sole_x0020_material" msprop:Generator_UserParentTable="Sole material" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationМатеріал_підошвиКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="Матеріал підошвиКаталог взуття" msprop:Generator_ParentPropName="Sole_materialRow" />
+      <msdata:Relationship name="СезонКаталог_x0020_взуття" msdata:parent="Season" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Season" msprop:Generator_UserParentTable="Season" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationСезонКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="СезонКаталог взуття" msprop:Generator_ParentPropName="SeasonRow" />
+      <msdata:Relationship name="СтильКаталог_x0020_взуття" msdata:parent="Style" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Style" msprop:Generator_UserParentTable="Style" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationСтильКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="СтильКаталог взуття" msprop:Generator_ParentPropName="StyleRow" />
+      <msdata:Relationship name="Цільова_x0020_аудиторіяКаталог_x0020_взуття" msdata:parent="Target_x0020_audience" msdata:child="Shoes_x0020_catalogue" msdata:parentkey="Code" msdata:childkey="Target_x0020_audience" msprop:Generator_UserParentTable="Target audience" msprop:Generator_UserChildTable="Shoes catalogue" msprop:Generator_RelationVarName="relationЦільова_аудиторіяКаталог_взуття" msprop:Generator_ChildPropName="GetShoes_catalogueRows" msprop:Generator_UserRelationName="Цільова аудиторіяКаталог взуття" msprop:Generator_ParentPropName="Target_audienceRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

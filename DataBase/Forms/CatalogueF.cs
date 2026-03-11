@@ -203,24 +203,18 @@ namespace DataBase
 
         private void btnStyleFind_Click(object sender, EventArgs e)
         {
-            if (byte.TryParse(tbStyleFind.Text, out byte styleValue))
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Style] = " + tbStyleFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
             {
-                DataRow[] foundrows = shoesDataSet.Shoes_catalogue.Select("[Style] = " + styleValue);
-                dgwFound.Rows.Clear();
-                foreach (DataRow fr in foundrows)
-                {
-                    dgwFound.Rows.Add(fr.ItemArray);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid numeric style code (0-255).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dgwFound.Rows.Add(fr.ItemArray);
             }
         }
+        
 
         private void btnLiningFind_Click(object sender, EventArgs e)
         {
-            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Lining_material] like '" + tbLiningFind.Text + "*'");
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Lining material] = " + tbLiningFind.Text + "");
             dgwFound.Rows.Clear();
             foreach (DataRow fr in foundrows)
             {
@@ -230,7 +224,7 @@ namespace DataBase
 
         private void btnUpperFind_Click(object sender, EventArgs e)
         {
-            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Upper_material] like '" + tbUpperFind.Text + "*'");
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Upper material] = " + tbUpperFind.Text + "");
             dgwFound.Rows.Clear();
             foreach (DataRow fr in foundrows)
             {
@@ -240,7 +234,7 @@ namespace DataBase
 
         private void btnSoleFind_Click(object sender, EventArgs e)
         {
-            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Sole_material] like '" + tbSoleFind.Text + "*'");
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Sole material] = " + tbSoleFind.Text + "");
             dgwFound.Rows.Clear();
             foreach (DataRow fr in foundrows)
             {
@@ -250,47 +244,131 @@ namespace DataBase
 
         private void btnColorFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Color] like '" + tbColorFind.Text + "*'");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnSizeFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Size] = " + tbSizeFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnSeasonFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Season] = " + tbSeasonFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnCountryFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Country] = " + tbCountryFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnBrandFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Brand] = " + tbBrandFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnAudienceFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Target audience] = " + tbAudienceFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnPrizeFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Prize] = " + tbPrizeFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnTypeFind_Click(object sender, EventArgs e)
         {
-
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Type] = " + tbTypeFind.Text + "");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
         }
 
         private void btnAddFind_Click(object sender, EventArgs e)
         {
+            DataRow[] foundrows = this.shoesDataSet.Shoes_catalogue.Select("[Additional] like '" + tbAddFind.Text + "*'");
+            dgwFound.Rows.Clear();
+            foreach (DataRow fr in foundrows)
+            {
+                dgwFound.Rows.Add(fr.ItemArray);
+            }
+        }
 
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkedListBox1.SelectedIndices.Count == 0)
+            {
+                shoes_catalogueBindingSource.Filter = "";
+            }
+            else
+            {
+                if (checkedListBox1.SelectedIndices.Contains(0))
+                {
+                    shoes_catalogueBindingSource.Filter = "[Name] like '" + tbFilterName.Text + "*'";
+                }
+
+            }
+        }
+
+        private void checkedListBox1_Click(object sender, EventArgs e)
+        {
+            shoes_catalogueBindingSource.Filter = "";
+            foreach (int i in checkedListBox1.SelectedIndices)
+            {
+                if (i == 0)
+                {
+                    shoes_catalogueBindingSource.Filter += "[Name] like '" + tbFilterName.Text + "*'";
+                }
+                if (i == 1)
+                {
+                    if (shoes_catalogueBindingSource.Filter == "")
+                    {
+                        shoes_catalogueBindingSource.Filter += "[Style] = " + tbFilterStyle.Text + "";
+                    }
+                    else
+                    {
+                        shoes_catalogueBindingSource.Filter += " and [Style] = " + tbFilterStyle.Text + "";
+                    }
+                }
+            }
         }
     }
 }

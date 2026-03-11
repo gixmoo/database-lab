@@ -225,6 +225,11 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Photo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.tbFilterName = new System.Windows.Forms.TextBox();
+            this.tbFilterStyle = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingNavigator)).BeginInit();
@@ -1888,7 +1893,9 @@
             this.Column11,
             this.Column12,
             this.Column13,
-            this.Column14});
+            this.Column14,
+            this.Column15,
+            this.Photo});
             this.dgwFound.Location = new System.Drawing.Point(12, 255);
             this.dgwFound.Name = "dgwFound";
             this.dgwFound.Size = new System.Drawing.Size(1641, 150);
@@ -1896,79 +1903,119 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "Code";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Name";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Column3";
+            this.Column3.HeaderText = "Style";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Column4";
+            this.Column4.HeaderText = "Lining  material";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Column5";
+            this.Column5.HeaderText = "Upper  material";
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Column6";
+            this.Column6.HeaderText = "Sole  material";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Column7";
+            this.Column7.HeaderText = "Color";
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "Column8";
+            this.Column8.HeaderText = "Size";
             this.Column8.Name = "Column8";
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "Column9";
+            this.Column9.HeaderText = "Season";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
-            this.Column10.HeaderText = "Column10";
+            this.Column10.HeaderText = "Country";
             this.Column10.Name = "Column10";
             // 
             // Column11
             // 
-            this.Column11.HeaderText = "Column11";
+            this.Column11.HeaderText = "Brand";
             this.Column11.Name = "Column11";
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Column12";
+            this.Column12.HeaderText = "Audience";
             this.Column12.Name = "Column12";
             // 
             // Column13
             // 
-            this.Column13.HeaderText = "Column13";
+            this.Column13.HeaderText = "Prize";
             this.Column13.Name = "Column13";
             // 
             // Column14
             // 
-            this.Column14.HeaderText = "Column14";
+            this.Column14.HeaderText = "Type";
             this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Additional";
+            this.Column15.Name = "Column15";
+            // 
+            // Photo
+            // 
+            this.Photo.HeaderText = "Photo";
+            this.Photo.Name = "Photo";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Name",
+            "Style"});
+            this.checkedListBox1.Location = new System.Drawing.Point(1362, 440);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 13;
+            this.checkedListBox1.Click += new System.EventHandler(this.checkedListBox1_Click);
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // tbFilterName
+            // 
+            this.tbFilterName.Location = new System.Drawing.Point(1488, 441);
+            this.tbFilterName.Name = "tbFilterName";
+            this.tbFilterName.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterName.TabIndex = 14;
+            // 
+            // tbFilterStyle
+            // 
+            this.tbFilterStyle.Location = new System.Drawing.Point(1488, 468);
+            this.tbFilterStyle.Name = "tbFilterStyle";
+            this.tbFilterStyle.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterStyle.TabIndex = 15;
             // 
             // CatalogueF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1665, 899);
+            this.Controls.Add(this.tbFilterStyle);
+            this.Controls.Add(this.tbFilterName);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.dgwFound);
             this.Controls.Add(this.gb3);
             this.Controls.Add(this.shoes_catalogueDataGridView);
@@ -2202,5 +2249,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Photo;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TextBox tbFilterName;
+        private System.Windows.Forms.TextBox tbFilterStyle;
     }
 }

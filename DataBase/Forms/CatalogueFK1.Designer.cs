@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogueFK1));
             this.shoesDataSet = new DataBase.ShoesDataSet();
-            this.shoes_catalogue1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shoes_catalogue1TableAdapter = new DataBase.ShoesDataSetTableAdapters.Shoes_catalogue1TableAdapter();
-            this.tableAdapterManager = new DataBase.ShoesDataSetTableAdapters.TableAdapterManager();
             this.shoes_catalogue1BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.shoes_catalogue1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -165,8 +164,6 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.shoesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lining_materialTableAdapter = new DataBase.ShoesDataSetTableAdapters.Lining_materialTableAdapter();
             this.upper_materialTableAdapter = new DataBase.ShoesDataSetTableAdapters.Upper_materialTableAdapter();
             this.sole_materialTableAdapter = new DataBase.ShoesDataSetTableAdapters.Sole_materialTableAdapter();
@@ -175,10 +172,73 @@
             this.target_audienceTableAdapter = new DataBase.ShoesDataSetTableAdapters.Target_audienceTableAdapter();
             this.brandTableAdapter = new DataBase.ShoesDataSetTableAdapters.BrandTableAdapter();
             this.typeTableAdapter = new DataBase.ShoesDataSetTableAdapters.TypeTableAdapter();
+            this.gb3 = new System.Windows.Forms.GroupBox();
+            this.tbAddFind = new System.Windows.Forms.TextBox();
+            this.btnAddFind = new System.Windows.Forms.Button();
+            this.lblFoundAdd = new System.Windows.Forms.Label();
+            this.tbTypeFind = new System.Windows.Forms.TextBox();
+            this.btnTypeFind = new System.Windows.Forms.Button();
+            this.lblFoundType = new System.Windows.Forms.Label();
+            this.tbPrizeFind = new System.Windows.Forms.TextBox();
+            this.btnPrizeFind = new System.Windows.Forms.Button();
+            this.lblFoundPrize = new System.Windows.Forms.Label();
+            this.tbAudienceFind = new System.Windows.Forms.TextBox();
+            this.btnAudienceFind = new System.Windows.Forms.Button();
+            this.lblFoundAudience = new System.Windows.Forms.Label();
+            this.tbBrandFind = new System.Windows.Forms.TextBox();
+            this.btnBrandFind = new System.Windows.Forms.Button();
+            this.lblFoundBrand = new System.Windows.Forms.Label();
+            this.tbCountryFind = new System.Windows.Forms.TextBox();
+            this.btnCountryFind = new System.Windows.Forms.Button();
+            this.lblFoundCountry = new System.Windows.Forms.Label();
+            this.tbSeasonFind = new System.Windows.Forms.TextBox();
+            this.btnSeasonFind = new System.Windows.Forms.Button();
+            this.lblFoundSeason = new System.Windows.Forms.Label();
+            this.tbSizeFind = new System.Windows.Forms.TextBox();
+            this.btnSizeFind = new System.Windows.Forms.Button();
+            this.lblFoundSize = new System.Windows.Forms.Label();
+            this.tbColorFind = new System.Windows.Forms.TextBox();
+            this.btnColorFind = new System.Windows.Forms.Button();
+            this.lblFoundColor = new System.Windows.Forms.Label();
+            this.tbSoleFind = new System.Windows.Forms.TextBox();
+            this.btnSoleFind = new System.Windows.Forms.Button();
+            this.lblFoundSole = new System.Windows.Forms.Label();
+            this.tbUpperFind = new System.Windows.Forms.TextBox();
+            this.btnUpperFind = new System.Windows.Forms.Button();
+            this.lblFoundUpper = new System.Windows.Forms.Label();
+            this.tbLiningFind = new System.Windows.Forms.TextBox();
+            this.btnLiningFind = new System.Windows.Forms.Button();
+            this.lblFoundLining = new System.Windows.Forms.Label();
+            this.tbStyleFind = new System.Windows.Forms.TextBox();
+            this.btnStyleFind = new System.Windows.Forms.Button();
+            this.lblFoundStyle = new System.Windows.Forms.Label();
+            this.btnIDFind = new System.Windows.Forms.Button();
+            this.tbNameFind = new System.Windows.Forms.TextBox();
+            this.tbIDFind = new System.Windows.Forms.TextBox();
+            this.btnNameFind = new System.Windows.Forms.Button();
+            this.lblFoundName = new System.Windows.Forms.Label();
+            this.dgwFound = new System.Windows.Forms.DataGridView();
+            this.tableAdapterManager = new DataBase.ShoesDataSetTableAdapters.TableAdapterManager();
+            this.shoesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingNavigator)).BeginInit();
             this.shoes_catalogue1BindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingSource)).BeginInit();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.targetAudienceBindingSource)).BeginInit();
@@ -191,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.styleBindingSource)).BeginInit();
             this.gb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1DataGridView)).BeginInit();
+            this.gb3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwFound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,32 +261,9 @@
             this.shoesDataSet.DataSetName = "ShoesDataSet";
             this.shoesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // shoes_catalogue1BindingSource
-            // 
-            this.shoes_catalogue1BindingSource.DataMember = "Shoes catalogue1";
-            this.shoes_catalogue1BindingSource.DataSource = this.shoesDataSet;
-            this.shoes_catalogue1BindingSource.PositionChanged += new System.EventHandler(this.shoes_catalogue1BindingSource_PositionChanged);
-            // 
             // shoes_catalogue1TableAdapter
             // 
             this.shoes_catalogue1TableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Brand1TableAdapter = null;
-            this.tableAdapterManager.BrandTableAdapter = null;
-            this.tableAdapterManager.CountryTableAdapter = null;
-            this.tableAdapterManager.Lining_materialTableAdapter = null;
-            this.tableAdapterManager.SeasonTableAdapter = null;
-            this.tableAdapterManager.Shoes_catalogue1TableAdapter = this.shoes_catalogue1TableAdapter;
-            this.tableAdapterManager.Shoes_catalogueTableAdapter = null;
-            this.tableAdapterManager.Sole_materialTableAdapter = null;
-            this.tableAdapterManager.StyleTableAdapter = null;
-            this.tableAdapterManager.Target_audienceTableAdapter = null;
-            this.tableAdapterManager.TypeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = DataBase.ShoesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.Upper_materialTableAdapter = null;
             // 
             // shoes_catalogue1BindingNavigator
             // 
@@ -264,6 +303,12 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // shoes_catalogue1BindingSource
+            // 
+            this.shoes_catalogue1BindingSource.DataMember = "Shoes catalogue1";
+            this.shoes_catalogue1BindingSource.DataSource = this.shoesDataSet;
+            this.shoes_catalogue1BindingSource.PositionChanged += new System.EventHandler(this.shoes_catalogue1BindingSource_PositionChanged);
             // 
             // bindingNavigatorCountItem
             // 
@@ -395,7 +440,7 @@
             this.gb2.Controls.Add(this.nameL1);
             this.gb2.Controls.Add(this.dataNameTb);
             this.gb2.Controls.Add(this.dataCodeTb);
-            this.gb2.Location = new System.Drawing.Point(462, 264);
+            this.gb2.Location = new System.Drawing.Point(462, 454);
             this.gb2.Name = "gb2";
             this.gb2.Size = new System.Drawing.Size(389, 444);
             this.gb2.TabIndex = 7;
@@ -857,7 +902,7 @@
             this.gb1.Controls.Add(this.brandCL);
             this.gb1.Controls.Add(this.nameL);
             this.gb1.Controls.Add(this.codeL);
-            this.gb1.Location = new System.Drawing.Point(12, 264);
+            this.gb1.Location = new System.Drawing.Point(12, 454);
             this.gb1.Name = "gb1";
             this.gb1.Size = new System.Drawing.Size(389, 438);
             this.gb1.TabIndex = 6;
@@ -1259,8 +1304,7 @@
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewImageColumn1});
+            this.dataGridViewTextBoxColumn16});
             this.shoes_catalogue1DataGridView.DataSource = this.shoes_catalogue1BindingSource;
             this.shoes_catalogue1DataGridView.Location = new System.Drawing.Point(12, 28);
             this.shoes_catalogue1DataGridView.Name = "shoes_catalogue1DataGridView";
@@ -1420,17 +1464,6 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Additional";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Photo";
-            this.dataGridViewImageColumn1.HeaderText = "Photo";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // shoesDataSetBindingSource
-            // 
-            this.shoesDataSetBindingSource.DataSource = this.shoesDataSet;
-            this.shoesDataSetBindingSource.Position = 0;
-            // 
             // lining_materialTableAdapter
             // 
             this.lining_materialTableAdapter.ClearBeforeFill = true;
@@ -1463,11 +1496,569 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
+            // gb3
+            // 
+            this.gb3.Controls.Add(this.tbAddFind);
+            this.gb3.Controls.Add(this.btnAddFind);
+            this.gb3.Controls.Add(this.lblFoundAdd);
+            this.gb3.Controls.Add(this.tbTypeFind);
+            this.gb3.Controls.Add(this.btnTypeFind);
+            this.gb3.Controls.Add(this.lblFoundType);
+            this.gb3.Controls.Add(this.tbPrizeFind);
+            this.gb3.Controls.Add(this.btnPrizeFind);
+            this.gb3.Controls.Add(this.lblFoundPrize);
+            this.gb3.Controls.Add(this.tbAudienceFind);
+            this.gb3.Controls.Add(this.btnAudienceFind);
+            this.gb3.Controls.Add(this.lblFoundAudience);
+            this.gb3.Controls.Add(this.tbBrandFind);
+            this.gb3.Controls.Add(this.btnBrandFind);
+            this.gb3.Controls.Add(this.lblFoundBrand);
+            this.gb3.Controls.Add(this.tbCountryFind);
+            this.gb3.Controls.Add(this.btnCountryFind);
+            this.gb3.Controls.Add(this.lblFoundCountry);
+            this.gb3.Controls.Add(this.tbSeasonFind);
+            this.gb3.Controls.Add(this.btnSeasonFind);
+            this.gb3.Controls.Add(this.lblFoundSeason);
+            this.gb3.Controls.Add(this.tbSizeFind);
+            this.gb3.Controls.Add(this.btnSizeFind);
+            this.gb3.Controls.Add(this.lblFoundSize);
+            this.gb3.Controls.Add(this.tbColorFind);
+            this.gb3.Controls.Add(this.btnColorFind);
+            this.gb3.Controls.Add(this.lblFoundColor);
+            this.gb3.Controls.Add(this.tbSoleFind);
+            this.gb3.Controls.Add(this.btnSoleFind);
+            this.gb3.Controls.Add(this.lblFoundSole);
+            this.gb3.Controls.Add(this.tbUpperFind);
+            this.gb3.Controls.Add(this.btnUpperFind);
+            this.gb3.Controls.Add(this.lblFoundUpper);
+            this.gb3.Controls.Add(this.tbLiningFind);
+            this.gb3.Controls.Add(this.btnLiningFind);
+            this.gb3.Controls.Add(this.lblFoundLining);
+            this.gb3.Controls.Add(this.tbStyleFind);
+            this.gb3.Controls.Add(this.btnStyleFind);
+            this.gb3.Controls.Add(this.lblFoundStyle);
+            this.gb3.Controls.Add(this.btnIDFind);
+            this.gb3.Controls.Add(this.tbNameFind);
+            this.gb3.Controls.Add(this.tbIDFind);
+            this.gb3.Controls.Add(this.btnNameFind);
+            this.gb3.Controls.Add(this.lblFoundName);
+            this.gb3.Location = new System.Drawing.Point(906, 454);
+            this.gb3.Name = "gb3";
+            this.gb3.Size = new System.Drawing.Size(417, 444);
+            this.gb3.TabIndex = 12;
+            this.gb3.TabStop = false;
+            this.gb3.Text = "Find data";
+            // 
+            // tbAddFind
+            // 
+            this.tbAddFind.Location = new System.Drawing.Point(35, 410);
+            this.tbAddFind.Name = "tbAddFind";
+            this.tbAddFind.Size = new System.Drawing.Size(100, 20);
+            this.tbAddFind.TabIndex = 49;
+            // 
+            // btnAddFind
+            // 
+            this.btnAddFind.Location = new System.Drawing.Point(141, 410);
+            this.btnAddFind.Name = "btnAddFind";
+            this.btnAddFind.Size = new System.Drawing.Size(128, 22);
+            this.btnAddFind.TabIndex = 48;
+            this.btnAddFind.Text = "Find by additional";
+            this.btnAddFind.UseVisualStyleBackColor = true;
+            this.btnAddFind.Click += new System.EventHandler(this.btnAddFind_Click);
+            // 
+            // lblFoundAdd
+            // 
+            this.lblFoundAdd.AutoSize = true;
+            this.lblFoundAdd.Location = new System.Drawing.Point(275, 415);
+            this.lblFoundAdd.Name = "lblFoundAdd";
+            this.lblFoundAdd.Size = new System.Drawing.Size(85, 13);
+            this.lblFoundAdd.TabIndex = 47;
+            this.lblFoundAdd.Text = "Found additional";
+            // 
+            // tbTypeFind
+            // 
+            this.tbTypeFind.Location = new System.Drawing.Point(35, 382);
+            this.tbTypeFind.Name = "tbTypeFind";
+            this.tbTypeFind.Size = new System.Drawing.Size(100, 20);
+            this.tbTypeFind.TabIndex = 46;
+            // 
+            // btnTypeFind
+            // 
+            this.btnTypeFind.Location = new System.Drawing.Point(141, 382);
+            this.btnTypeFind.Name = "btnTypeFind";
+            this.btnTypeFind.Size = new System.Drawing.Size(128, 22);
+            this.btnTypeFind.TabIndex = 45;
+            this.btnTypeFind.Text = "Find by type";
+            this.btnTypeFind.UseVisualStyleBackColor = true;
+            this.btnTypeFind.Click += new System.EventHandler(this.btnTypeFind_Click);
+            // 
+            // lblFoundType
+            // 
+            this.lblFoundType.AutoSize = true;
+            this.lblFoundType.Location = new System.Drawing.Point(275, 387);
+            this.lblFoundType.Name = "lblFoundType";
+            this.lblFoundType.Size = new System.Drawing.Size(60, 13);
+            this.lblFoundType.TabIndex = 44;
+            this.lblFoundType.Text = "Found type";
+            // 
+            // tbPrizeFind
+            // 
+            this.tbPrizeFind.Location = new System.Drawing.Point(35, 354);
+            this.tbPrizeFind.Name = "tbPrizeFind";
+            this.tbPrizeFind.Size = new System.Drawing.Size(100, 20);
+            this.tbPrizeFind.TabIndex = 43;
+            // 
+            // btnPrizeFind
+            // 
+            this.btnPrizeFind.Location = new System.Drawing.Point(141, 354);
+            this.btnPrizeFind.Name = "btnPrizeFind";
+            this.btnPrizeFind.Size = new System.Drawing.Size(128, 22);
+            this.btnPrizeFind.TabIndex = 42;
+            this.btnPrizeFind.Text = "Find by prize";
+            this.btnPrizeFind.UseVisualStyleBackColor = true;
+            this.btnPrizeFind.Click += new System.EventHandler(this.btnPrizeFind_Click);
+            // 
+            // lblFoundPrize
+            // 
+            this.lblFoundPrize.AutoSize = true;
+            this.lblFoundPrize.Location = new System.Drawing.Point(275, 359);
+            this.lblFoundPrize.Name = "lblFoundPrize";
+            this.lblFoundPrize.Size = new System.Drawing.Size(62, 13);
+            this.lblFoundPrize.TabIndex = 41;
+            this.lblFoundPrize.Text = "Found prize";
+            // 
+            // tbAudienceFind
+            // 
+            this.tbAudienceFind.Location = new System.Drawing.Point(35, 326);
+            this.tbAudienceFind.Name = "tbAudienceFind";
+            this.tbAudienceFind.Size = new System.Drawing.Size(100, 20);
+            this.tbAudienceFind.TabIndex = 40;
+            // 
+            // btnAudienceFind
+            // 
+            this.btnAudienceFind.Location = new System.Drawing.Point(141, 326);
+            this.btnAudienceFind.Name = "btnAudienceFind";
+            this.btnAudienceFind.Size = new System.Drawing.Size(128, 22);
+            this.btnAudienceFind.TabIndex = 39;
+            this.btnAudienceFind.Text = "Find by audience";
+            this.btnAudienceFind.UseVisualStyleBackColor = true;
+            this.btnAudienceFind.Click += new System.EventHandler(this.btnAudienceFind_Click);
+            // 
+            // lblFoundAudience
+            // 
+            this.lblFoundAudience.AutoSize = true;
+            this.lblFoundAudience.Location = new System.Drawing.Point(275, 331);
+            this.lblFoundAudience.Name = "lblFoundAudience";
+            this.lblFoundAudience.Size = new System.Drawing.Size(84, 13);
+            this.lblFoundAudience.TabIndex = 38;
+            this.lblFoundAudience.Text = "Found audience";
+            // 
+            // tbBrandFind
+            // 
+            this.tbBrandFind.Location = new System.Drawing.Point(35, 298);
+            this.tbBrandFind.Name = "tbBrandFind";
+            this.tbBrandFind.Size = new System.Drawing.Size(100, 20);
+            this.tbBrandFind.TabIndex = 37;
+            // 
+            // btnBrandFind
+            // 
+            this.btnBrandFind.Location = new System.Drawing.Point(141, 298);
+            this.btnBrandFind.Name = "btnBrandFind";
+            this.btnBrandFind.Size = new System.Drawing.Size(128, 22);
+            this.btnBrandFind.TabIndex = 36;
+            this.btnBrandFind.Text = "Find by brand";
+            this.btnBrandFind.UseVisualStyleBackColor = true;
+            this.btnBrandFind.Click += new System.EventHandler(this.btnBrandFind_Click);
+            // 
+            // lblFoundBrand
+            // 
+            this.lblFoundBrand.AutoSize = true;
+            this.lblFoundBrand.Location = new System.Drawing.Point(275, 303);
+            this.lblFoundBrand.Name = "lblFoundBrand";
+            this.lblFoundBrand.Size = new System.Drawing.Size(67, 13);
+            this.lblFoundBrand.TabIndex = 35;
+            this.lblFoundBrand.Text = "Found brand";
+            // 
+            // tbCountryFind
+            // 
+            this.tbCountryFind.Location = new System.Drawing.Point(35, 270);
+            this.tbCountryFind.Name = "tbCountryFind";
+            this.tbCountryFind.Size = new System.Drawing.Size(100, 20);
+            this.tbCountryFind.TabIndex = 34;
+            // 
+            // btnCountryFind
+            // 
+            this.btnCountryFind.Location = new System.Drawing.Point(141, 270);
+            this.btnCountryFind.Name = "btnCountryFind";
+            this.btnCountryFind.Size = new System.Drawing.Size(128, 22);
+            this.btnCountryFind.TabIndex = 33;
+            this.btnCountryFind.Text = "Find by country";
+            this.btnCountryFind.UseVisualStyleBackColor = true;
+            this.btnCountryFind.Click += new System.EventHandler(this.btnCountryFind_Click);
+            // 
+            // lblFoundCountry
+            // 
+            this.lblFoundCountry.AutoSize = true;
+            this.lblFoundCountry.Location = new System.Drawing.Point(275, 275);
+            this.lblFoundCountry.Name = "lblFoundCountry";
+            this.lblFoundCountry.Size = new System.Drawing.Size(75, 13);
+            this.lblFoundCountry.TabIndex = 32;
+            this.lblFoundCountry.Text = "Found country";
+            // 
+            // tbSeasonFind
+            // 
+            this.tbSeasonFind.Location = new System.Drawing.Point(35, 242);
+            this.tbSeasonFind.Name = "tbSeasonFind";
+            this.tbSeasonFind.Size = new System.Drawing.Size(100, 20);
+            this.tbSeasonFind.TabIndex = 31;
+            // 
+            // btnSeasonFind
+            // 
+            this.btnSeasonFind.Location = new System.Drawing.Point(141, 242);
+            this.btnSeasonFind.Name = "btnSeasonFind";
+            this.btnSeasonFind.Size = new System.Drawing.Size(128, 22);
+            this.btnSeasonFind.TabIndex = 30;
+            this.btnSeasonFind.Text = "Find by season";
+            this.btnSeasonFind.UseVisualStyleBackColor = true;
+            this.btnSeasonFind.Click += new System.EventHandler(this.btnSeasonFind_Click);
+            // 
+            // lblFoundSeason
+            // 
+            this.lblFoundSeason.AutoSize = true;
+            this.lblFoundSeason.Location = new System.Drawing.Point(275, 247);
+            this.lblFoundSeason.Name = "lblFoundSeason";
+            this.lblFoundSeason.Size = new System.Drawing.Size(74, 13);
+            this.lblFoundSeason.TabIndex = 29;
+            this.lblFoundSeason.Text = "Found season";
+            // 
+            // tbSizeFind
+            // 
+            this.tbSizeFind.Location = new System.Drawing.Point(35, 214);
+            this.tbSizeFind.Name = "tbSizeFind";
+            this.tbSizeFind.Size = new System.Drawing.Size(100, 20);
+            this.tbSizeFind.TabIndex = 28;
+            // 
+            // btnSizeFind
+            // 
+            this.btnSizeFind.Location = new System.Drawing.Point(141, 214);
+            this.btnSizeFind.Name = "btnSizeFind";
+            this.btnSizeFind.Size = new System.Drawing.Size(128, 22);
+            this.btnSizeFind.TabIndex = 27;
+            this.btnSizeFind.Text = "Find by size";
+            this.btnSizeFind.UseVisualStyleBackColor = true;
+            this.btnSizeFind.Click += new System.EventHandler(this.btnSizeFind_Click);
+            // 
+            // lblFoundSize
+            // 
+            this.lblFoundSize.AutoSize = true;
+            this.lblFoundSize.Location = new System.Drawing.Point(275, 219);
+            this.lblFoundSize.Name = "lblFoundSize";
+            this.lblFoundSize.Size = new System.Drawing.Size(58, 13);
+            this.lblFoundSize.TabIndex = 26;
+            this.lblFoundSize.Text = "Found size";
+            // 
+            // tbColorFind
+            // 
+            this.tbColorFind.Location = new System.Drawing.Point(35, 186);
+            this.tbColorFind.Name = "tbColorFind";
+            this.tbColorFind.Size = new System.Drawing.Size(100, 20);
+            this.tbColorFind.TabIndex = 25;
+            // 
+            // btnColorFind
+            // 
+            this.btnColorFind.Location = new System.Drawing.Point(141, 186);
+            this.btnColorFind.Name = "btnColorFind";
+            this.btnColorFind.Size = new System.Drawing.Size(128, 22);
+            this.btnColorFind.TabIndex = 24;
+            this.btnColorFind.Text = "Find by color";
+            this.btnColorFind.UseVisualStyleBackColor = true;
+            this.btnColorFind.Click += new System.EventHandler(this.btnColorFind_Click);
+            // 
+            // lblFoundColor
+            // 
+            this.lblFoundColor.AutoSize = true;
+            this.lblFoundColor.Location = new System.Drawing.Point(275, 191);
+            this.lblFoundColor.Name = "lblFoundColor";
+            this.lblFoundColor.Size = new System.Drawing.Size(63, 13);
+            this.lblFoundColor.TabIndex = 23;
+            this.lblFoundColor.Text = "Found color";
+            // 
+            // tbSoleFind
+            // 
+            this.tbSoleFind.Location = new System.Drawing.Point(35, 158);
+            this.tbSoleFind.Name = "tbSoleFind";
+            this.tbSoleFind.Size = new System.Drawing.Size(100, 20);
+            this.tbSoleFind.TabIndex = 22;
+            // 
+            // btnSoleFind
+            // 
+            this.btnSoleFind.Location = new System.Drawing.Point(141, 158);
+            this.btnSoleFind.Name = "btnSoleFind";
+            this.btnSoleFind.Size = new System.Drawing.Size(128, 22);
+            this.btnSoleFind.TabIndex = 21;
+            this.btnSoleFind.Text = "Find by sole material";
+            this.btnSoleFind.UseVisualStyleBackColor = true;
+            this.btnSoleFind.Click += new System.EventHandler(this.btnSoleFind_Click);
+            // 
+            // lblFoundSole
+            // 
+            this.lblFoundSole.AutoSize = true;
+            this.lblFoundSole.Location = new System.Drawing.Point(275, 163);
+            this.lblFoundSole.Name = "lblFoundSole";
+            this.lblFoundSole.Size = new System.Drawing.Size(98, 13);
+            this.lblFoundSole.TabIndex = 20;
+            this.lblFoundSole.Text = "Found sole material";
+            // 
+            // tbUpperFind
+            // 
+            this.tbUpperFind.Location = new System.Drawing.Point(35, 130);
+            this.tbUpperFind.Name = "tbUpperFind";
+            this.tbUpperFind.Size = new System.Drawing.Size(100, 20);
+            this.tbUpperFind.TabIndex = 19;
+            // 
+            // btnUpperFind
+            // 
+            this.btnUpperFind.Location = new System.Drawing.Point(141, 130);
+            this.btnUpperFind.Name = "btnUpperFind";
+            this.btnUpperFind.Size = new System.Drawing.Size(128, 22);
+            this.btnUpperFind.TabIndex = 18;
+            this.btnUpperFind.Text = "Find by upper material";
+            this.btnUpperFind.UseVisualStyleBackColor = true;
+            this.btnUpperFind.Click += new System.EventHandler(this.btnUpperFind_Click);
+            // 
+            // lblFoundUpper
+            // 
+            this.lblFoundUpper.AutoSize = true;
+            this.lblFoundUpper.Location = new System.Drawing.Point(275, 135);
+            this.lblFoundUpper.Name = "lblFoundUpper";
+            this.lblFoundUpper.Size = new System.Drawing.Size(106, 13);
+            this.lblFoundUpper.TabIndex = 17;
+            this.lblFoundUpper.Text = "Found upper material";
+            // 
+            // tbLiningFind
+            // 
+            this.tbLiningFind.Location = new System.Drawing.Point(35, 102);
+            this.tbLiningFind.Name = "tbLiningFind";
+            this.tbLiningFind.Size = new System.Drawing.Size(100, 20);
+            this.tbLiningFind.TabIndex = 16;
+            // 
+            // btnLiningFind
+            // 
+            this.btnLiningFind.Location = new System.Drawing.Point(141, 102);
+            this.btnLiningFind.Name = "btnLiningFind";
+            this.btnLiningFind.Size = new System.Drawing.Size(128, 22);
+            this.btnLiningFind.TabIndex = 15;
+            this.btnLiningFind.Text = "Find by lining material";
+            this.btnLiningFind.UseVisualStyleBackColor = true;
+            this.btnLiningFind.Click += new System.EventHandler(this.btnLiningFind_Click);
+            // 
+            // lblFoundLining
+            // 
+            this.lblFoundLining.AutoSize = true;
+            this.lblFoundLining.Location = new System.Drawing.Point(275, 107);
+            this.lblFoundLining.Name = "lblFoundLining";
+            this.lblFoundLining.Size = new System.Drawing.Size(103, 13);
+            this.lblFoundLining.TabIndex = 14;
+            this.lblFoundLining.Text = "Found lining material";
+            // 
+            // tbStyleFind
+            // 
+            this.tbStyleFind.Location = new System.Drawing.Point(35, 74);
+            this.tbStyleFind.Name = "tbStyleFind";
+            this.tbStyleFind.Size = new System.Drawing.Size(100, 20);
+            this.tbStyleFind.TabIndex = 13;
+            // 
+            // btnStyleFind
+            // 
+            this.btnStyleFind.Location = new System.Drawing.Point(141, 74);
+            this.btnStyleFind.Name = "btnStyleFind";
+            this.btnStyleFind.Size = new System.Drawing.Size(128, 22);
+            this.btnStyleFind.TabIndex = 12;
+            this.btnStyleFind.Text = "Find by style";
+            this.btnStyleFind.UseVisualStyleBackColor = true;
+            this.btnStyleFind.Click += new System.EventHandler(this.btnStyleFind_Click);
+            // 
+            // lblFoundStyle
+            // 
+            this.lblFoundStyle.AutoSize = true;
+            this.lblFoundStyle.Location = new System.Drawing.Point(275, 80);
+            this.lblFoundStyle.Name = "lblFoundStyle";
+            this.lblFoundStyle.Size = new System.Drawing.Size(61, 13);
+            this.lblFoundStyle.TabIndex = 11;
+            this.lblFoundStyle.Text = "Found style";
+            // 
+            // btnIDFind
+            // 
+            this.btnIDFind.Location = new System.Drawing.Point(141, 20);
+            this.btnIDFind.Name = "btnIDFind";
+            this.btnIDFind.Size = new System.Drawing.Size(128, 22);
+            this.btnIDFind.TabIndex = 6;
+            this.btnIDFind.Text = "Find by code";
+            this.btnIDFind.UseVisualStyleBackColor = true;
+            this.btnIDFind.Click += new System.EventHandler(this.btnIDFind_Click);
+            // 
+            // tbNameFind
+            // 
+            this.tbNameFind.Location = new System.Drawing.Point(35, 47);
+            this.tbNameFind.Name = "tbNameFind";
+            this.tbNameFind.Size = new System.Drawing.Size(100, 20);
+            this.tbNameFind.TabIndex = 10;
+            // 
+            // tbIDFind
+            // 
+            this.tbIDFind.Location = new System.Drawing.Point(35, 20);
+            this.tbIDFind.Name = "tbIDFind";
+            this.tbIDFind.Size = new System.Drawing.Size(100, 20);
+            this.tbIDFind.TabIndex = 7;
+            // 
+            // btnNameFind
+            // 
+            this.btnNameFind.Location = new System.Drawing.Point(141, 47);
+            this.btnNameFind.Name = "btnNameFind";
+            this.btnNameFind.Size = new System.Drawing.Size(128, 22);
+            this.btnNameFind.TabIndex = 9;
+            this.btnNameFind.Text = "Find by name";
+            this.btnNameFind.UseVisualStyleBackColor = true;
+            this.btnNameFind.Click += new System.EventHandler(this.btnNameFind_Click);
+            // 
+            // lblFoundName
+            // 
+            this.lblFoundName.AutoSize = true;
+            this.lblFoundName.Location = new System.Drawing.Point(275, 52);
+            this.lblFoundName.Name = "lblFoundName";
+            this.lblFoundName.Size = new System.Drawing.Size(66, 13);
+            this.lblFoundName.TabIndex = 8;
+            this.lblFoundName.Text = "Found name";
+            // 
+            // dgwFound
+            // 
+            this.dgwFound.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwFound.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15});
+            this.dgwFound.Location = new System.Drawing.Point(12, 254);
+            this.dgwFound.Name = "dgwFound";
+            this.dgwFound.Size = new System.Drawing.Size(1647, 150);
+            this.dgwFound.TabIndex = 13;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Brand1TableAdapter = null;
+            this.tableAdapterManager.BrandTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.CountryTableAdapter = null;
+            this.tableAdapterManager.Lining_materialTableAdapter = null;
+            this.tableAdapterManager.SeasonTableAdapter = null;
+            this.tableAdapterManager.Shoes_catalogue1TableAdapter = null;
+            this.tableAdapterManager.Shoes_catalogueTableAdapter = null;
+            this.tableAdapterManager.Sole_materialTableAdapter = null;
+            this.tableAdapterManager.StyleTableAdapter = null;
+            this.tableAdapterManager.Target_audienceTableAdapter = null;
+            this.tableAdapterManager.TypeTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = DataBase.ShoesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.Upper_materialTableAdapter = null;
+            // 
+            // shoesDataSetBindingSource
+            // 
+            this.shoesDataSetBindingSource.DataSource = this.shoesDataSet;
+            this.shoesDataSetBindingSource.Position = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Code";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "StyleName";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "LiningName";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "UpperName";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "SoleName";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Color";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Size";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "SeasonName";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "CountryName";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "BrandName";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "AudienceName";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Prize";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "TypeName";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Additional";
+            this.Column15.Name = "Column15";
+            // 
             // CatalogueFK1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1667, 728);
+            this.ClientSize = new System.Drawing.Size(1667, 920);
+            this.Controls.Add(this.dgwFound);
+            this.Controls.Add(this.gb3);
             this.Controls.Add(this.shoes_catalogue1DataGridView);
             this.Controls.Add(this.gb2);
             this.Controls.Add(this.gb1);
@@ -1476,10 +2067,10 @@
             this.Text = "CatalogueFK1";
             this.Load += new System.EventHandler(this.CatalogueFK1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingNavigator)).EndInit();
             this.shoes_catalogue1BindingNavigator.ResumeLayout(false);
             this.shoes_catalogue1BindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1BindingSource)).EndInit();
             this.gb2.ResumeLayout(false);
             this.gb2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
@@ -1494,6 +2085,9 @@
             this.gb1.ResumeLayout(false);
             this.gb1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogue1DataGridView)).EndInit();
+            this.gb3.ResumeLayout(false);
+            this.gb3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwFound)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1519,7 +2113,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton shoes_catalogue1BindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.GroupBox gb2;
         private System.Windows.Forms.TextBox dataAddTb;
         private System.Windows.Forms.TextBox dataTypeTb;
@@ -1605,7 +2199,7 @@
         private System.Windows.Forms.Label codeL;
         private System.Windows.Forms.BindingSource styleBindingSource;
         private ShoesDataSetTableAdapters.StyleTableAdapter styleTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridView shoes_catalogue1DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1631,7 +2225,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        //private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.BindingSource shoesDataSetBindingSource;
         private System.Windows.Forms.BindingSource liningMaterialBindingSource;
         private ShoesDataSetTableAdapters.Lining_materialTableAdapter lining_materialTableAdapter;
@@ -1649,5 +2243,66 @@
         private ShoesDataSetTableAdapters.BrandTableAdapter brandTableAdapter;
         private System.Windows.Forms.BindingSource typeBindingSource;
         private ShoesDataSetTableAdapters.TypeTableAdapter typeTableAdapter;
+        private System.Windows.Forms.GroupBox gb3;
+        private System.Windows.Forms.TextBox tbAddFind;
+        private System.Windows.Forms.Button btnAddFind;
+        private System.Windows.Forms.Label lblFoundAdd;
+        private System.Windows.Forms.TextBox tbTypeFind;
+        private System.Windows.Forms.Button btnTypeFind;
+        private System.Windows.Forms.Label lblFoundType;
+        private System.Windows.Forms.TextBox tbPrizeFind;
+        private System.Windows.Forms.Button btnPrizeFind;
+        private System.Windows.Forms.Label lblFoundPrize;
+        private System.Windows.Forms.TextBox tbAudienceFind;
+        private System.Windows.Forms.Button btnAudienceFind;
+        private System.Windows.Forms.Label lblFoundAudience;
+        private System.Windows.Forms.TextBox tbBrandFind;
+        private System.Windows.Forms.Button btnBrandFind;
+        private System.Windows.Forms.Label lblFoundBrand;
+        private System.Windows.Forms.TextBox tbCountryFind;
+        private System.Windows.Forms.Button btnCountryFind;
+        private System.Windows.Forms.Label lblFoundCountry;
+        private System.Windows.Forms.TextBox tbSeasonFind;
+        private System.Windows.Forms.Button btnSeasonFind;
+        private System.Windows.Forms.Label lblFoundSeason;
+        private System.Windows.Forms.TextBox tbSizeFind;
+        private System.Windows.Forms.Button btnSizeFind;
+        private System.Windows.Forms.Label lblFoundSize;
+        private System.Windows.Forms.TextBox tbColorFind;
+        private System.Windows.Forms.Button btnColorFind;
+        private System.Windows.Forms.Label lblFoundColor;
+        private System.Windows.Forms.TextBox tbSoleFind;
+        private System.Windows.Forms.Button btnSoleFind;
+        private System.Windows.Forms.Label lblFoundSole;
+        private System.Windows.Forms.TextBox tbUpperFind;
+        private System.Windows.Forms.Button btnUpperFind;
+        private System.Windows.Forms.Label lblFoundUpper;
+        private System.Windows.Forms.TextBox tbLiningFind;
+        private System.Windows.Forms.Button btnLiningFind;
+        private System.Windows.Forms.Label lblFoundLining;
+        private System.Windows.Forms.TextBox tbStyleFind;
+        private System.Windows.Forms.Button btnStyleFind;
+        private System.Windows.Forms.Label lblFoundStyle;
+        private System.Windows.Forms.Button btnIDFind;
+        private System.Windows.Forms.TextBox tbNameFind;
+        private System.Windows.Forms.TextBox tbIDFind;
+        private System.Windows.Forms.Button btnNameFind;
+        private System.Windows.Forms.Label lblFoundName;
+        private System.Windows.Forms.DataGridView dgwFound;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
     }
 }
