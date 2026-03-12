@@ -93,7 +93,7 @@ namespace DataBase
             {
                 MessageBox.Show("Невозможно добавить данную запись, так как она используется в других таблицах базы данных.", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void delBtn_Click(object sender, EventArgs e)
@@ -103,11 +103,11 @@ namespace DataBase
                 DataRow dr = shoesDataSet.Shoes_catalogue.Rows[shoes_catalogueBindingSource.Position];
                 dr.Delete();
             }
-            catch 
-            { 
+            catch
+            {
                 MessageBox.Show("Невозможно удалить данную запись, так как она используется в других таблицах базы данных.", "Ошибка удаления", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace DataBase
             {
                 MessageBox.Show("Невозможно отредактировать данную запись, так как она используется в других таблицах базы данных.", "Ошибка редактирования", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void shoes_catalogueBindingSource_PositionChanged(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace DataBase
             {
                 MessageBox.Show("code is not found", "search error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+
         }
 
         private void btnNameFind_Click(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace DataBase
                 dgwFound.Rows.Add(fr.ItemArray);
             }
         }
-        
+
 
         private void btnLiningFind_Click(object sender, EventArgs e)
         {
@@ -332,43 +332,51 @@ namespace DataBase
             }
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cbFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkedListBox1.SelectedIndices.Count == 0)
+            shoes_catalogueBindingSource.Filter = "";
+            if (cbFilter.Checked)
             {
-                shoes_catalogueBindingSource.Filter = "";
+                foreach (int i in checkedListBox1.CheckedIndices)
+                {
+                    if (i == 0)
+                    {
+                        shoes_catalogueBindingSource.Filter = "[Name] like '*" + tbFilterName.Text + "*'";
+                    }
+                    if (i == 1)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Style] = " + tbFilterStyle.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Style] = " + tbFilterStyle.Text;
+                    }
+                    if (i == 2)
+                    {
+                        // continue
+                    }
+                }
+                cbFilter.Text = "Filter on";
             }
             else
             {
-                if (checkedListBox1.SelectedIndices.Contains(0))
-                {
-                    shoes_catalogueBindingSource.Filter = "[Name] like '" + tbFilterName.Text + "*'";
-                }
-
+                cbFilter.Text = "Filter off";
             }
         }
 
-        private void checkedListBox1_Click(object sender, EventArgs e)
+
+        private void tbFilterName_TextChanged(object sender, EventArgs e)
         {
-            shoes_catalogueBindingSource.Filter = "";
-            foreach (int i in checkedListBox1.SelectedIndices)
+            if ((sender as TextBox).Text.Length > 0)
             {
-                if (i == 0)
-                {
-                    shoes_catalogueBindingSource.Filter += "[Name] like '" + tbFilterName.Text + "*'";
-                }
-                if (i == 1)
-                {
-                    if (shoes_catalogueBindingSource.Filter == "")
-                    {
-                        shoes_catalogueBindingSource.Filter += "[Style] = " + tbFilterStyle.Text + "";
-                    }
-                    else
-                    {
-                        shoes_catalogueBindingSource.Filter += " and [Style] = " + tbFilterStyle.Text + "";
-                    }
-                }
+                cbFilter_CheckedChanged(cbFilter, e);
             }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbFilter_CheckedChanged(cbFilter, e);
+
         }
     }
 }

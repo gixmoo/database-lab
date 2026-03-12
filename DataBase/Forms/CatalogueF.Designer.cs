@@ -230,6 +230,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tbFilterName = new System.Windows.Forms.TextBox();
             this.tbFilterStyle = new System.Windows.Forms.TextBox();
+            this.cbFilter = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingNavigator)).BeginInit();
@@ -1986,12 +1987,12 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Name",
-            "Style"});
+            "Style",
+            "Lining material"});
             this.checkedListBox1.Location = new System.Drawing.Point(1362, 440);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox1.TabIndex = 13;
-            this.checkedListBox1.Click += new System.EventHandler(this.checkedListBox1_Click);
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // tbFilterName
@@ -2000,6 +2001,7 @@
             this.tbFilterName.Name = "tbFilterName";
             this.tbFilterName.Size = new System.Drawing.Size(100, 20);
             this.tbFilterName.TabIndex = 14;
+            this.tbFilterName.TextChanged += new System.EventHandler(this.tbFilterName_TextChanged);
             // 
             // tbFilterStyle
             // 
@@ -2008,11 +2010,24 @@
             this.tbFilterStyle.Size = new System.Drawing.Size(100, 20);
             this.tbFilterStyle.TabIndex = 15;
             // 
+            // cbFilter
+            // 
+            this.cbFilter.AutoSize = true;
+            this.cbFilter.Location = new System.Drawing.Point(1362, 548);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(63, 17);
+            this.cbFilter.TabIndex = 16;
+            this.cbFilter.Tag = " ";
+            this.cbFilter.Text = "Filter on";
+            this.cbFilter.UseVisualStyleBackColor = true;
+            this.cbFilter.CheckedChanged += new System.EventHandler(this.cbFilter_CheckedChanged);
+            // 
             // CatalogueF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1665, 899);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.tbFilterStyle);
             this.Controls.Add(this.tbFilterName);
             this.Controls.Add(this.checkedListBox1);
@@ -2254,5 +2269,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox tbFilterName;
         private System.Windows.Forms.TextBox tbFilterStyle;
+        private System.Windows.Forms.CheckBox cbFilter;
     }
 }
