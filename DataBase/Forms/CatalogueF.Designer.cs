@@ -231,6 +231,18 @@
             this.tbFilterName = new System.Windows.Forms.TextBox();
             this.tbFilterStyle = new System.Windows.Forms.TextBox();
             this.cbFilter = new System.Windows.Forms.CheckBox();
+            this.tbFilterLining = new System.Windows.Forms.TextBox();
+            this.tbFilterUpper = new System.Windows.Forms.TextBox();
+            this.tbFilterSeason = new System.Windows.Forms.TextBox();
+            this.tbFilterSize = new System.Windows.Forms.TextBox();
+            this.tbFilterColor = new System.Windows.Forms.TextBox();
+            this.tbFilterSole = new System.Windows.Forms.TextBox();
+            this.tbFilterAdd = new System.Windows.Forms.TextBox();
+            this.tbFilterType = new System.Windows.Forms.TextBox();
+            this.tbFilterPrize = new System.Windows.Forms.TextBox();
+            this.tbFilterAudience = new System.Windows.Forms.TextBox();
+            this.tbFilterBrand = new System.Windows.Forms.TextBox();
+            this.tbFilterCountry = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.shoesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoes_catalogueBindingNavigator)).BeginInit();
@@ -1984,20 +1996,32 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Name",
             "Style",
-            "Lining material"});
-            this.checkedListBox1.Location = new System.Drawing.Point(1362, 440);
+            "Lining material",
+            "Upper material",
+            "Sole material",
+            "Color",
+            "Size",
+            "Season",
+            "Country",
+            "Brand",
+            "Target audience",
+            "Prize",
+            "Type",
+            "Additional"});
+            this.checkedListBox1.Location = new System.Drawing.Point(1345, 440);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.Size = new System.Drawing.Size(161, 326);
             this.checkedListBox1.TabIndex = 13;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // tbFilterName
             // 
-            this.tbFilterName.Location = new System.Drawing.Point(1488, 441);
+            this.tbFilterName.Location = new System.Drawing.Point(1512, 445);
             this.tbFilterName.Name = "tbFilterName";
             this.tbFilterName.Size = new System.Drawing.Size(100, 20);
             this.tbFilterName.TabIndex = 14;
@@ -2005,15 +2029,16 @@
             // 
             // tbFilterStyle
             // 
-            this.tbFilterStyle.Location = new System.Drawing.Point(1488, 468);
+            this.tbFilterStyle.Location = new System.Drawing.Point(1512, 468);
             this.tbFilterStyle.Name = "tbFilterStyle";
             this.tbFilterStyle.Size = new System.Drawing.Size(100, 20);
             this.tbFilterStyle.TabIndex = 15;
+            this.tbFilterStyle.TextChanged += new System.EventHandler(this.tbFilterStyle_TextChanged);
             // 
             // cbFilter
             // 
             this.cbFilter.AutoSize = true;
-            this.cbFilter.Location = new System.Drawing.Point(1362, 548);
+            this.cbFilter.Location = new System.Drawing.Point(1345, 772);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(63, 17);
             this.cbFilter.TabIndex = 16;
@@ -2022,11 +2047,119 @@
             this.cbFilter.UseVisualStyleBackColor = true;
             this.cbFilter.CheckedChanged += new System.EventHandler(this.cbFilter_CheckedChanged);
             // 
+            // tbFilterLining
+            // 
+            this.tbFilterLining.Location = new System.Drawing.Point(1512, 491);
+            this.tbFilterLining.Name = "tbFilterLining";
+            this.tbFilterLining.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterLining.TabIndex = 17;
+            this.tbFilterLining.TextChanged += new System.EventHandler(this.tbFilterLining_TextChanged);
+            // 
+            // tbFilterUpper
+            // 
+            this.tbFilterUpper.Location = new System.Drawing.Point(1512, 514);
+            this.tbFilterUpper.Name = "tbFilterUpper";
+            this.tbFilterUpper.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterUpper.TabIndex = 18;
+            this.tbFilterUpper.TextChanged += new System.EventHandler(this.tbFilterUpper_TextChanged);
+            // 
+            // tbFilterSeason
+            // 
+            this.tbFilterSeason.Location = new System.Drawing.Point(1512, 606);
+            this.tbFilterSeason.Name = "tbFilterSeason";
+            this.tbFilterSeason.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterSeason.TabIndex = 22;
+            this.tbFilterSeason.TextChanged += new System.EventHandler(this.tbFilterSeason_TextChanged);
+            // 
+            // tbFilterSize
+            // 
+            this.tbFilterSize.Location = new System.Drawing.Point(1512, 583);
+            this.tbFilterSize.Name = "tbFilterSize";
+            this.tbFilterSize.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterSize.TabIndex = 21;
+            this.tbFilterSize.TextChanged += new System.EventHandler(this.tbFilterSize_TextChanged);
+            // 
+            // tbFilterColor
+            // 
+            this.tbFilterColor.Location = new System.Drawing.Point(1512, 560);
+            this.tbFilterColor.Name = "tbFilterColor";
+            this.tbFilterColor.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterColor.TabIndex = 20;
+            this.tbFilterColor.TextChanged += new System.EventHandler(this.tbFilterColor_TextChanged);
+            // 
+            // tbFilterSole
+            // 
+            this.tbFilterSole.Location = new System.Drawing.Point(1512, 537);
+            this.tbFilterSole.Name = "tbFilterSole";
+            this.tbFilterSole.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterSole.TabIndex = 19;
+            this.tbFilterSole.TextChanged += new System.EventHandler(this.tbFilterSole_TextChanged);
+            // 
+            // tbFilterAdd
+            // 
+            this.tbFilterAdd.Location = new System.Drawing.Point(1512, 743);
+            this.tbFilterAdd.Name = "tbFilterAdd";
+            this.tbFilterAdd.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterAdd.TabIndex = 28;
+            this.tbFilterAdd.TextChanged += new System.EventHandler(this.tbFilterAdd_TextChanged);
+            // 
+            // tbFilterType
+            // 
+            this.tbFilterType.Location = new System.Drawing.Point(1512, 720);
+            this.tbFilterType.Name = "tbFilterType";
+            this.tbFilterType.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterType.TabIndex = 27;
+            this.tbFilterType.TextChanged += new System.EventHandler(this.tbFilterType_TextChanged);
+            // 
+            // tbFilterPrize
+            // 
+            this.tbFilterPrize.Location = new System.Drawing.Point(1512, 697);
+            this.tbFilterPrize.Name = "tbFilterPrize";
+            this.tbFilterPrize.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterPrize.TabIndex = 26;
+            this.tbFilterPrize.TextChanged += new System.EventHandler(this.tbFilterPrize_TextChanged);
+            // 
+            // tbFilterAudience
+            // 
+            this.tbFilterAudience.Location = new System.Drawing.Point(1512, 674);
+            this.tbFilterAudience.Name = "tbFilterAudience";
+            this.tbFilterAudience.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterAudience.TabIndex = 25;
+            this.tbFilterAudience.TextChanged += new System.EventHandler(this.tbFilterAudience_TextChanged);
+            // 
+            // tbFilterBrand
+            // 
+            this.tbFilterBrand.Location = new System.Drawing.Point(1512, 651);
+            this.tbFilterBrand.Name = "tbFilterBrand";
+            this.tbFilterBrand.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterBrand.TabIndex = 24;
+            this.tbFilterBrand.TextChanged += new System.EventHandler(this.tbFilterBrand_TextChanged);
+            // 
+            // tbFilterCountry
+            // 
+            this.tbFilterCountry.Location = new System.Drawing.Point(1512, 628);
+            this.tbFilterCountry.Name = "tbFilterCountry";
+            this.tbFilterCountry.Size = new System.Drawing.Size(100, 20);
+            this.tbFilterCountry.TabIndex = 23;
+            this.tbFilterCountry.TextChanged += new System.EventHandler(this.tbFilterCountry_TextChanged);
+            // 
             // CatalogueF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1665, 899);
+            this.Controls.Add(this.tbFilterAdd);
+            this.Controls.Add(this.tbFilterType);
+            this.Controls.Add(this.tbFilterPrize);
+            this.Controls.Add(this.tbFilterAudience);
+            this.Controls.Add(this.tbFilterBrand);
+            this.Controls.Add(this.tbFilterCountry);
+            this.Controls.Add(this.tbFilterSeason);
+            this.Controls.Add(this.tbFilterSize);
+            this.Controls.Add(this.tbFilterColor);
+            this.Controls.Add(this.tbFilterSole);
+            this.Controls.Add(this.tbFilterUpper);
+            this.Controls.Add(this.tbFilterLining);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.tbFilterStyle);
             this.Controls.Add(this.tbFilterName);
@@ -2270,5 +2403,17 @@
         private System.Windows.Forms.TextBox tbFilterName;
         private System.Windows.Forms.TextBox tbFilterStyle;
         private System.Windows.Forms.CheckBox cbFilter;
+        private System.Windows.Forms.TextBox tbFilterLining;
+        private System.Windows.Forms.TextBox tbFilterUpper;
+        private System.Windows.Forms.TextBox tbFilterSeason;
+        private System.Windows.Forms.TextBox tbFilterSize;
+        private System.Windows.Forms.TextBox tbFilterColor;
+        private System.Windows.Forms.TextBox tbFilterSole;
+        private System.Windows.Forms.TextBox tbFilterAdd;
+        private System.Windows.Forms.TextBox tbFilterType;
+        private System.Windows.Forms.TextBox tbFilterPrize;
+        private System.Windows.Forms.TextBox tbFilterAudience;
+        private System.Windows.Forms.TextBox tbFilterBrand;
+        private System.Windows.Forms.TextBox tbFilterCountry;
     }
 }

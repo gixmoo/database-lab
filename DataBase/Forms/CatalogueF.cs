@@ -353,7 +353,87 @@ namespace DataBase
                     }
                     if (i == 2)
                     {
-                        // continue
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Lining material] = " + tbFilterLining.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Lining] = " + tbFilterLining.Text;
+                    }
+                    if (i == 3)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Upper material] = " + tbFilterUpper.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Upper material] = " + tbFilterUpper.Text;
+                    }
+                    if (i == 4)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Sole material] = " + tbFilterSole.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Sole material] = " + tbFilterSole.Text;
+                    }
+                    if (i == 5)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Color] like '*" + tbFilterColor.Text + "*'";
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Color] like '*" + tbFilterColor.Text + "*'";
+                    }
+                    if (i == 6)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Size] = " + tbFilterSize.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Size] = " + tbFilterSize.Text;
+                    }
+                    if (i == 7)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Season] = " + tbFilterSeason.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Season] = " + tbFilterSeason.Text;
+                    }
+                    if (i == 8)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Country] = " + tbFilterCountry.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Country] = " + tbFilterCountry.Text;
+                    }
+                    if (i == 9)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Brand] = " + tbFilterBrand.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Brand] = " + tbFilterBrand.Text;
+                    }
+                    if (i == 10)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Target audience] = " + tbFilterAudience.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Target audience] = " + tbFilterAudience.Text;
+                    }
+                    if (i == 11)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Prize] = " + tbFilterPrize.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Prize] = " + tbFilterPrize.Text;
+                    }
+                    if (i == 12)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Type] = " + tbFilterType.Text;
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Type] = " + tbFilterType.Text;
+                    }
+                    if (i == 13)
+                    {
+                        if (shoes_catalogueBindingSource.Filter == "")
+                            shoes_catalogueBindingSource.Filter = "[Additional] like '*" + tbFilterAdd.Text + "*'";
+                        else
+                            shoes_catalogueBindingSource.Filter = shoes_catalogueBindingSource.Filter + " and [Additional] like '*" + tbFilterAdd.Text + "*'";
                     }
                 }
                 cbFilter.Text = "Filter on";
@@ -364,6 +444,11 @@ namespace DataBase
             }
         }
 
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbFilter_CheckedChanged(cbFilter, e);
+
+        }
 
         private void tbFilterName_TextChanged(object sender, EventArgs e)
         {
@@ -373,10 +458,108 @@ namespace DataBase
             }
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tbFilterStyle_TextChanged(object sender, EventArgs e)
         {
-            cbFilter_CheckedChanged(cbFilter, e);
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
 
+        private void tbFilterLining_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterUpper_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterSole_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterColor_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterSize_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterSeason_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterCountry_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterBrand_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterAudience_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterPrize_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterType_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
+        }
+
+        private void tbFilterAdd_TextChanged(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text.Length > 0)
+            {
+                cbFilter_CheckedChanged(cbFilter, e);
+            }
         }
     }
 }
